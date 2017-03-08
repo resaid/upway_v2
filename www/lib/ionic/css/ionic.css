@@ -5255,7 +5255,7 @@ ion-tabs.tabs-striped.tabs-color-active-dark .tab-item.tab-item-active, ion-tabs
   top: 0; }
 
 .pane[hide-nav-bar="true"] .has-tabs-top {
-  top: 49px; }
+  top: 0; }
 
 /**
  * Menus
