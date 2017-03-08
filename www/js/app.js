@@ -39,32 +39,128 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   })
 
   // Each tab has its own nav history stack:
-
-  .state('tab.dash', {
-    url: '/dash',
+  
+  /* LOGIN + INSCRIPTION */
+  
+  .state('tab.login', {
+    url: '/login',
     views: {
-      'tab-dash': {
-        templateUrl: 'templates/tab-dash.html',
-        controller: 'DashCtrl'
+      'tab': {
+        templateUrl: 'templates/login.html',
       }
     }
   })
-
-  .state('tab.chats', {
-      url: '/chats',
+  
+  .state('tab.inscription', {
+    url: '/inscription',
+    views: {
+      'tab': {
+        templateUrl: 'templates/inscription.html',
+      }
+    }
+  })
+  
+  /* ACCUEIL */
+  
+  .state('tab.accueil', {
+    url: '/accueil',
+    views: {
+      'tab': {
+        templateUrl: 'templates/accueil.html',
+      }
+    }
+  })
+  
+  /* STATS + ANCIENS TRAJETS */
+  
+  .state('tab.statistiques', {
+      url: '/statistiques',
       views: {
-        'tab-chats': {
-          templateUrl: 'templates/tab-chats.html',
-          controller: 'ChatsCtrl'
+        'tab': {
+          templateUrl: 'templates/statistiques.html',
         }
       }
     })
-    .state('tab.chat-detail', {
+  
+  .state('tab.anciens_trajets', {
+    url: '/anciens_trajets',
+    views: {
+      'tab': {
+        templateUrl: 'templates/anciens_trajets.html',
+      }
+    }
+  })
+  
+  /* TRAJET */
+  
+  .state('tab.trajet_current', {
+    url: '/trajet_current',
+    views: {
+      'tab': {
+        templateUrl: 'templates/trajet_current.html',
+      }
+    }
+  })
+  
+  .state('tab.day_night', {
+    url: '/day_night',
+    views: {
+      'tab': {
+        templateUrl: 'templates/day_night.html',
+      }
+    }
+  })
+  
+  .state('tab.meteo', {
+    url: '/meteo',
+    views: {
+      'tab': {
+        templateUrl: 'templates/meteo.html',
+      }
+    }
+  })
+  
+  .state('tab.manoeuvres', {
+    url: '/manoeuvres',
+    views: {
+      'tab': {
+        templateUrl: 'templates/manoeuvres.html',
+      }
+    }
+  })
+  
+  .state('tab.recap_trajet', {
+      url: '/recap_trajet',
+      views: {
+        'tab': {
+          templateUrl: 'templates/recap_trajet.html',
+        }
+      }
+    })
+  
+  /* FICHES PEDAGOGIQUES */
+  
+  .state('tab.fiches', {
+    url: '/fiches',
+    views: {
+      'tab': {
+        templateUrl: 'templates/fiches.html',
+      }
+    }
+  })
+  
+  
+  
+  
+  
+
+  
+  /*
+  .state('tab.chat-detail', {
       url: '/chats/:chatId',
       views: {
-        'tab-chats': {
+        'tab': {
           templateUrl: 'templates/chat-detail.html',
-          controller: 'ChatDetailCtrl'
         }
       }
     })
@@ -72,11 +168,13 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   .state('tab.account', {
     url: '/account',
     views: {
-      'tab-account': {
+      'tab-': {
         templateUrl: 'templates/tab-account.html',
         controller: 'AccountCtrl'
       }
     }
+    */
+  
   });
 
   // if none of the above states are matched, use this as the fallback
