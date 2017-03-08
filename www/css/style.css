@@ -55,7 +55,7 @@ hr {
     margin: auto;
     color: #ffffff;
 }
-#main .scroll{display:flex;}
+#main .scroll{display:flex;height: 100vh}
 .container-home {
     padding: 0;
     margin: auto;
