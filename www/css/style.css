@@ -1,1 +1,99 @@
-/* Empty. Add your own CSS if you like */
+/*===============================================
+Font Roboto
+ ===============================================*/
+@font-face {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 300;
+    src: local("Roboto Light"), local("Roboto-Light"), url("../font/roboto-light.woff2") format("woff2"), url("../font/roboto-light.woff") format("woff"), url("../font/roboto-light.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 400;
+    src: local("Roboto"), local("Roboto-Regular"), url("../font/roboto-regular.woff2") format("woff2"), url("../font/roboto-regular.woff") format("woff"), url("../font/roboto-regular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 500;
+    src: local("Roboto Medium"), local("Roboto-Medium"), url("../font/roboto-medium.woff2") format("woff2"), url("../font/roboto-medium.woff") format("woff"), url("../font/roboto-medium.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 700;
+    src: local("Roboto Bold"), local("Roboto-Bold"), url("../font/roboto-bold.woff2") format("woff2"), url("../font/roboto-bold.woff") format("woff"), url("../font/roboto-bold.ttf") format("truetype");
+}
+
+
+
+.header-logo{
+    width: 70%;
+    margin: 0 auto 60px;
+}
+.slogan{color:#fff;
+    text-align:center;
+    font-size: 17px;
+    font-family: "Roboto", sans-serif;
+}
+
+.btn-lg {
+    width: 100%;
+    height: auto;
+    border: 0;
+    font-size: 16px;
+    padding: 16px 0;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.btn-blue{
+    /*background: #4b5497;*/
+    background: linear-gradient(#343E81 0%, #3E468B 50%, #545A92 100%);
+    color: #ffffff;
+}
+
+.btn-white{
+    background: linear-gradient(#AE9A87 0%, #CFBFAE 50%, #FFF 100%);
+    color: #4b5497;
+}
+.login, #main {
+    background: url(../img/background-1.jpg) center;
+    background-size: cover;
+
+}
+.separation {
+    width: 100%;
+    margin: 20px auto;
+    display: flex;
+}
+
+hr {
+    width: 40%;
+    display: inline-block;
+    border: 0;
+    border-top: solid 1px #ffffff;
+    margin: auto;
+}
+#choix {
+    display: inline-block;
+    width: 20%;
+    text-align: center;
+    font-size: 17px;
+    margin: auto;
+    color: #ffffff;
+}
+#main .scroll-content{display:flex;}
+.container-home {
+    padding: 0;
+    margin: auto;
+    width: 70%;
+}
+
+
+
+
