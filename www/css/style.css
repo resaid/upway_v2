@@ -1,9 +1,41 @@
+/*======================
+    Header general
+====================== */
+.bar-stable{
+    background: #454EB5 !important;
+}
 .tabs-hide .tabs {
     display: none;
 }
 .page {
     width: 100vw;
 }
+
+.icon-up{
+    width: 75px;
+}
+.bar.bar-stable .title {
+    color: #fff !important;
+}
+
+/*=============================
+    Icon
+============================= */
+.icon-up::before{
+    content: url("../img/icon/up-blanc.svg");
+}
+.icon-star{
+    content: url("../img/icon/star.svg");
+    width: 20%;
+}
+/*.icon-up::before{
+    content: url("../img/icon/up-blanc.svg");
+}
+.icon-up::before{
+    content: url("../img/icon/up-blanc.svg");
+}*/
+
+
 /* REGLES GENERALES */
 
 p {
@@ -92,7 +124,7 @@ p {
     color: #ffffff;
 }
 
-.btn-white{
+.btn-beige{
     background: linear-gradient(#AE9A87 0%, #CFBFAE 50%, #FFF 100%);
     color: #4b5497;
 }
@@ -183,4 +215,11 @@ textarea::-webkit-input-placeholder {
 }
 .section-connect span,.section-registre span{
     color:#545a92;
+}
+
+.block-recap-one{
+    text-align: center;
+}
+.section-recap-two{
+    background: #454eb5;
 }
