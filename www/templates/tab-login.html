@@ -1,7 +1,22 @@
-<ion-view  hide-nav-bar="true">
-    <ion-content padding id="main">
-        <div class="page">
-            
+<ion-view  hide-nav-bar="true" >
+    <ion-content padding class="bg-home" id="main">
+        <div class="page container-home">
+            <header class="header-logo center">
+                <img class="logo" src="../img/logo-monochrome.svg" alt="logo Upway"/>
+            </header>
+            <section class="block-bottom section-connect ">
+                <div class="block-input mbot30">
+                    <label class="item item-input item-floating-label">
+                        <span class="input-label">Adresse e-mail</span>
+                        <input type="email" placeholder="Adresse e-mail">
+                    </label>
+                    <label class="item item-input item-floating-label">
+                        <span class="input-label">Mot de passe</span>
+                        <input type="password" placeholder="Mot de passe">
+                    </label>
+                </div>
+                <button type="submit" class="btn-lg btn-white">Connexion</button>
+            </section>
         </div>
     </ion-content>
 </ion-view>

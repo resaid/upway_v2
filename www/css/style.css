@@ -169,3 +169,18 @@ hr {
     background-size: 400px;
     background-position: 0 0;
 }
+
+.section-connect .item, .section-registre .item{
+    border: none;
+    border-bottom: 2px solid #fff;
+    padding: 0;
+    margin: 0;
+}
+.section-connect input,.section-registre input,input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+    color: #fff;
+
+}
+.section-connect span,.section-registre span{
+    color:#545a92;
+}
