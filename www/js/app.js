@@ -106,7 +106,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     url: '/day_night',
     views: {
       'tab-day_night': {
-        templateUrl: 'templates/tab-day_night.html'
+        templateUrl: 'templates/tab-day_night.html',
+        controller: 'FintrajetCtrl'
       }
     }
   })
@@ -115,7 +116,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     url: '/meteo',
     views: {
       'tab-meteo': {
-        templateUrl: 'templates/tab-meteo.html'
+        templateUrl: 'templates/tab-meteo.html',
+        controller: 'FintrajetCtrl'
       }
     }
   })
@@ -169,7 +171,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     url: '/home',
     views: {
       'tab-home': {
-        templateUrl: 'templates/tab-home.html',
+        templateUrl: 'templates/tab-home.html'
         //controller: 'HomeCtrl'
       }
     }
