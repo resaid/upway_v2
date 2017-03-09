@@ -45,8 +45,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   .state('tab.login', {
     url: '/login',
     views: {
-      'tab': {
-        templateUrl: 'templates/login.html',
+      'tab-login': {
+        templateUrl: 'templates/tab-login.html',
       }
     }
   })
@@ -54,8 +54,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   .state('tab.inscription', {
     url: '/inscription',
     views: {
-      'tab': {
-        templateUrl: 'templates/inscription.html',
+      'tab-inscription': {
+        templateUrl: 'templates/tab-inscription.html',
       }
     }
   })
@@ -65,8 +65,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   .state('tab.accueil', {
     url: '/accueil',
     views: {
-      'tab': {
-        templateUrl: 'templates/accueil.html',
+      'tab-accueil': {
+        templateUrl: 'templates/tab-accueil.html',
       }
     }
   })
@@ -76,7 +76,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   .state('tab.statistiques', {
       url: '/statistiques',
       views: {
-        'tab': {
+        'tab-statistiques': {
           templateUrl: 'templates/statistiques.html',
         }
       }
@@ -85,8 +85,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   .state('tab.anciens_trajets', {
     url: '/anciens_trajets',
     views: {
-      'tab': {
-        templateUrl: 'templates/anciens_trajets.html',
+      'tab-anciens_trajets': {
+        templateUrl: 'templates/tab-anciens_trajets.html',
       }
     }
   })
@@ -96,8 +96,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   .state('tab.trajet_current', {
     url: '/trajet_current',
     views: {
-      'tab': {
-        templateUrl: 'templates/trajet_current.html',
+      'tab-trajet_current': {
+        templateUrl: 'templates/tab-trajet_current.html',
       }
     }
   })
@@ -105,8 +105,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   .state('tab.day_night', {
     url: '/day_night',
     views: {
-      'tab': {
-        templateUrl: 'templates/day_night.html',
+      'tab-day_night': {
+        templateUrl: 'templates/tab-day_night.html',
       }
     }
   })
@@ -114,8 +114,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   .state('tab.meteo', {
     url: '/meteo',
     views: {
-      'tab': {
-        templateUrl: 'templates/meteo.html',
+      'tab-meteo': {
+        templateUrl: 'templates/tab-meteo.html',
       }
     }
   })
@@ -123,8 +123,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   .state('tab.manoeuvres', {
     url: '/manoeuvres',
     views: {
-      'tab': {
-        templateUrl: 'templates/manoeuvres.html',
+      'tab-manoeuvres': {
+        templateUrl: 'templates/tab-manoeuvres.html',
       }
     }
   })
@@ -132,8 +132,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   .state('tab.recap_trajet', {
       url: '/recap_trajet',
       views: {
-        'tab': {
-          templateUrl: 'templates/recap_trajet.html',
+        'tab-recap_trajet': {
+          templateUrl: 'templates/tab-recap_trajet.html',
         }
       }
     })
@@ -143,8 +143,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   .state('tab.fiches', {
     url: '/fiches',
     views: {
-      'tab': {
-        templateUrl: 'templates/fiches.html',
+      'tab-fiches': {
+        templateUrl: 'templates/tab-fiches.html',
       }
     }
   })
@@ -163,20 +163,20 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
           templateUrl: 'templates/chat-detail.html',
         }
       }
-    })
+    })*/
 
-  .state('tab.account', {
-    url: '/account',
+  .state('tab.home', {
+    url: '/home',
     views: {
-      'tab-': {
-        templateUrl: 'templates/tab-account.html',
-        controller: 'AccountCtrl'
+      'tab-home': {
+        templateUrl: 'templates/tab-home.html',
+        /*controller: 'AccountCtrl'*/
       }
     }
 
-  });    */
+  });
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab/dash');
+  $urlRouterProvider.otherwise('/tab/home');
 
 });
