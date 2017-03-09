@@ -21,6 +21,10 @@ angular.module('starter.controllers', [])
   $scope.chat = Chats.get($stateParams.chatId);
 })
 
+    .controller('HomeCtrl', function($scope) {
+        $scope.$root.tabsHidden = "tabs-hide";
+})
+
 .controller('AccountCtrl', function($scope) {
   $scope.settings = {
     enableFriends: true

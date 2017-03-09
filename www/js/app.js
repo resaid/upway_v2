@@ -46,7 +46,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     url: '/login',
     views: {
       'tab-login': {
-        templateUrl: 'templates/tab-login.html',
+        templateUrl: 'templates/tab-login.html'
       }
     }
   })
@@ -55,7 +55,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     url: '/inscription',
     views: {
       'tab-inscription': {
-        templateUrl: 'templates/tab-inscription.html',
+        templateUrl: 'templates/tab-inscription.html'
       }
     }
   })
@@ -66,7 +66,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     url: '/accueil',
     views: {
       'tab-accueil': {
-        templateUrl: 'templates/tab-accueil.html',
+        templateUrl: 'templates/tab-accueil.html'
       }
     }
   })
@@ -77,7 +77,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       url: '/statistiques',
       views: {
         'tab-statistiques': {
-          templateUrl: 'templates/statistiques.html',
+          templateUrl: 'templates/statistiques.html'
         }
       }
     })
@@ -86,7 +86,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     url: '/anciens_trajets',
     views: {
       'tab-anciens_trajets': {
-        templateUrl: 'templates/tab-anciens_trajets.html',
+        templateUrl: 'templates/tab-anciens_trajets.html'
       }
     }
   })
@@ -97,7 +97,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     url: '/trajet_current',
     views: {
       'tab-trajet_current': {
-        templateUrl: 'templates/tab-trajet_current.html',
+        templateUrl: 'templates/tab-trajet_current.html'
       }
     }
   })
@@ -106,7 +106,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     url: '/day_night',
     views: {
       'tab-day_night': {
-        templateUrl: 'templates/tab-day_night.html',
+        templateUrl: 'templates/tab-day_night.html'
       }
     }
   })
@@ -115,7 +115,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     url: '/meteo',
     views: {
       'tab-meteo': {
-        templateUrl: 'templates/tab-meteo.html',
+        templateUrl: 'templates/tab-meteo.html'
       }
     }
   })
@@ -124,7 +124,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     url: '/manoeuvres',
     views: {
       'tab-manoeuvres': {
-        templateUrl: 'templates/tab-manoeuvres.html',
+        templateUrl: 'templates/tab-manoeuvres.html'
       }
     }
   })
@@ -133,7 +133,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       url: '/recap_trajet',
       views: {
         'tab-recap_trajet': {
-          templateUrl: 'templates/tab-recap_trajet.html',
+          templateUrl: 'templates/tab-recap_trajet.html'
         }
       }
     })
@@ -144,7 +144,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     url: '/fiches',
     views: {
       'tab-fiches': {
-        templateUrl: 'templates/tab-fiches.html',
+        templateUrl: 'templates/tab-fiches.html'
       }
     }
   })
@@ -169,8 +169,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     url: '/home',
     views: {
       'tab-home': {
-        templateUrl: 'templates/tab-home.html',
-        /*controller: 'AccountCtrl'*/
+        templateUrl: 'templates/tab-home.html'
+        //controller: 'HomeCtrl'
       }
     }
 

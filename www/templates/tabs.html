@@ -3,15 +3,15 @@ Create tabs with an icon and label, using the tabs-positive style.
 Each tab's child <ion-nav-view> directive will have its own
 navigation history that also transitions its views in and out.
 -->
-<ion-tabs class="tabs-icon-top tabs-color-active-positive">
+<ion-tabs class="tabs-icon-top tabs-color-active-positive" ng-class="$root.tabsHidden">
 
   <!-- Dashboard Tab -->
-  <ion-tab  hidden icon-off="ion-document" icon-on="ion-android-document" href="#/tab/home">
+  <ion-tab  icon-off="ion-document" icon-on="ion-android-document" href="#/tab/home">
     <ion-nav-view name="tab-home"></ion-nav-view>
   </ion-tab>
 
   <!-- Chats Tab -->
-  <ion-tab icon-off="ion-ios-pie-outline" icon-on="ion-ios-pie" href="#/tab/inscription">
+  <ion-tab icon-off="ion-ios-pie-outline" icon-on="ion-ios-pie" href="#/tab/inscription" hidden="false">
     <ion-nav-view name="tab-inscription"></ion-nav-view>
   </ion-tab>
 

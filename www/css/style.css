@@ -1,4 +1,6 @@
-
+.tabs-hide .tabs {
+    display: none;
+}
 .header-logo{
     width: 70%;
     margin: 0 auto 60px;
