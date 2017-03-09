@@ -1,19 +1,82 @@
-.tabs-hide .tabs {
-    display: none;
+.page {
+    width: 100vw;
 }
+/* REGLES GENERALES */
+
+p {
+    font-size: 16px;
+    color: #fff;
+    margin: 0;
+}
+
+.txt-small {
+    font-size: 14px;
+}
+
+.center {
+    text-align: center;
+    margin: auto;
+    display: block;
+}
+
+.icon-medium {
+    width: 50px;
+}
+
+/* margin padding */
+
+.mtop5 {
+    margin-top: 5px;
+}
+.mbot5 {
+    margin-bottom: 5px;
+}
+.mtop10 {
+    margin-top: 10px;
+}
+.mbot10 {
+    margin-bottom: 10px;
+}
+.mtop15 {
+    margin-top: 15px;
+}
+.mbot15 {
+    margin-bottom: 15px;
+}
+.mtop20 {
+    margin-top: 20px;
+}
+.mbot20 {
+    margin-bottom: 20px;
+}
+.mtop30 {
+    margin-top: 30px;
+}
+.mbot30 {
+    margin-bottom: 30px;
+}
+.mtop40 {
+    margin-top: 40px;
+}
+.mbot40 {
+    margin-bottom: 40px;
+}
+.mtop50 {
+    margin-top: 50px;
+}
+.mbot50 {
+    margin-bottom: 50px;
+}
+
 .header-logo{
     width: 70%;
-    margin: 0 auto 60px;
 }
-.slogan{color:#fff;
-    text-align:center;
-    font-size: 17px;
+.slogan {
     font-family: "Roboto";
 }
 
 .btn-lg {
     width: 100%;
-    height: auto;
     border: 0;
     font-size: 16px;
     padding: 16px 0;
@@ -22,7 +85,6 @@
 }
 
 .btn-blue{
-    /*background: #4b5497;*/
     background: linear-gradient(#343E81 0%, #3E468B 50%, #545A92 100%);
     color: #ffffff;
 }
@@ -31,7 +93,7 @@
     background: linear-gradient(#AE9A87 0%, #CFBFAE 50%, #FFF 100%);
     color: #4b5497;
 }
-.login, .bg-main {
+.bg-home {
     background: url(../img/background-1.jpg) center;
     background-size: cover;
 
@@ -57,9 +119,50 @@ hr {
     margin: auto;
     color: #ffffff;
 }
-#main .scroll{display:flex;height: 100vh}
+#main .scroll{
+    display:flex;
+    height: 100vh;
+}
 .container-home {
     padding: 0;
     margin: auto;
     width: 70%;
+}
+
+/*******************************/
+
+.circle-white {
+    width: 180px;
+    height: 180px;
+    background: #fff;
+    border-radius: 50%;
+    font-size: 18px;
+    position: relative;
+}
+.circle-white > p {
+    color: #5A5693;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+}
+
+.bar-niveau {
+    width: 180px;
+    height: 10px;
+    border-bottom: solid 2px #fff;
+}
+
+.bar-niveau > .niveau {
+    width: 35%;
+    height: 10px;
+    background: #fff;
+}
+
+.sprite-niveau {
+    width: 80px;
+    height: 80px;
+    background-image: url(../img/level.svg);
+    background-size: 400px;
+    background-position: 0 0;
 }
