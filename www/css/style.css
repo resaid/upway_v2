@@ -31,7 +31,7 @@
     background: linear-gradient(#AE9A87 0%, #CFBFAE 50%, #FFF 100%);
     color: #4b5497;
 }
-.login, #main {
+.login, .bg-main {
     background: url(../img/background-1.jpg) center;
     background-size: cover;
 
