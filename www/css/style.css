@@ -1,3 +1,6 @@
+.tabs-hide .tabs {
+    display: none;
+}
 .page {
     width: 100vw;
 }
