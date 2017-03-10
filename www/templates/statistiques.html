@@ -1,21 +1,21 @@
-<ion-view title="Récapitulatif">
-        <ion-nav-buttons side="left">
-            <button menu-toggle="left"class="button button-icon icon-up"></button>
-        </ion-nav-buttons>
+<ion-view title="Détails">
+                <ion-nav-buttons side="left">
+                    <button menu-toggle="left"class="button button-icon icon-up"></button>
+                </ion-nav-buttons>
 
-    <ion-nav-buttons side="right">
-            <button class="button button-icon icon"></button>
-        </ion-nav-buttons>
-    <div class="bar bar-subheader">
-        <div class="tabs">
-            <a class="tab-item">
-                Statistiques
-            </a>
-            <a class="tab-item">
-                Anciens trajets
-            </a>
-        </div>
-    </div>
+                <ion-nav-buttons side="right">
+                    <button class="button button-icon icon"></button>
+                </ion-nav-buttons>
+                <div class="bar bar-subheader">
+                    <div class="tabs tabs-sub">
+                        <a class="tab-item active" href="#/tab/statistiques">
+                            Statistiques
+                        </a>
+                        <a class="tab-item" href="#/tab/anciens_trajets">
+                            Anciens trajets
+                        </a>
+                    </div>
+                </div>
 
     <ion-content padding id="main">
         <div class="page">
@@ -31,54 +31,41 @@
                </div>
             </section>
             <section class="section-stats-two">
-                <div class="container-main block-recap-two center ">
-
-
-                    <div class="infos-recap mtop30">
-                        <div class="info-temps info-icon mbot20">
-                            <i class="icon-size icon-temps mright10"></i>
-                            <span class="txt-recap">48 min</span>
+                <div class="container-main block-stat-two center">
+                    <div class="info-stat-header info-icon mbot20">
+                        <span class="txt-stat mbot40">1389 / 3000</span>
+                        <br>
+                        <div class="hr-picto-stat center mtop15 mbot10">
                             <hr>
-                            <span class="point-recap">+50xp</span>
+                            <i class="icon-size icon-auto mleft10 mright10 align-picto"></i>
+                            <hr>
+                        </div>
+                        <p class="mbot10">Il vous reste</p>
+                        <span class="km-stats">1611km</span>
+                    </div>
+
+                    <div class="infos-sats mtop30">
+                        <div class="info-temps info-icon mbot20">
+                            <i class="icon-road-size icon-road mright10"></i>
                         </div>
                         <div class="info-km info-icon mbot20">
-                            <i class="icon-size icon-location mright10"></i>
-                            <span class="txt-recap">63 km</span>
-                            <hr>
-                            <span class="point-recap">+75xp</span>
+                            <i class="icon-stat-size icon-temps mleft10 mright10"></i>
+                            <div class="hr-picto-stat2 center mtop15 mbot10">
+                                <p class="align-picto2 vertical-center"> 11h 56 min 45 sc</p>
+                            </div>
                         </div>
-                        <div class="info-type-road info-icon mbot20">
-                            <i class="icon-size icon-map mright10"></i>
-                            <span class="txt-recap">Agglomération</span>
-                            <hr>
-                            <span class="point-recap">+60xp</span>
+                        <div class="info-km info-icon mbot20">
+                            <i class="icon-stat-size icon-daynight mleft10 mright10"></i>
+                            <div class="hr-picto-stat2 center mtop15 mbot10">
+                                <p class="align-picto2 vertical-center"> 11h 56 min 45 sc</p>
+                            </div>
                         </div>
-                        <div class="info-meteo info-icon mbot20">
-                            <i class="icon-size icon-meteo mright10"></i>
-                            <span class="txt-recap">Temps sec</span>
-                            <hr>
-                            <span class="point-recap">+20xp</span>
+                        <div class="info-km info-icon mbot20">
+                            <i class="icon-stat-size icon-meteo mleft10 mright10"></i>
+                            <div class="hr-picto-stat2 center mtop15 mbot10">
+                                <p class="align-picto2 vertical-center"> 11h 56 min 45 sc</p>
+                            </div>
                         </div>
-                        <div class="info-daynight info-icon mbot20">
-                            <i class="icon-size icon-daynight mright10"></i>
-                            <span class="txt-recap">Trajet de jour</span>
-                            <hr>
-                            <span class="point-recap">+10xp</span>
-                        </div>
-                        <div class="info-manoeuvre info-icon mbot20">
-                            <i class="icon-size icon-auto mright10"></i>
-                            <span class="txt-recap">2 Manoeuvres</span>
-                            <hr>
-                            <span class="point-recap">+100xp</span>
-                        </div>
-                    </div>
-                    <div class="block-btn-recap center mtop50">
-                        <button class="button button-positive mright10">
-                           Partager
-                        </button>
-                        <button class="button button-positive">
-                            Terminer
-                        </button>
                     </div>
                 </div>
             </section>
