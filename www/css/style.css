@@ -269,7 +269,9 @@ hr {
     background-size: 400px;
     background-position: 0 0;
 }
-
+/**====================================
+Page connexion et registre
+ =====================================*/
 .section-connect .item, .section-registre .item{
     border: none;
     border-bottom: 2px solid #fff;
@@ -285,6 +287,10 @@ textarea::-webkit-input-placeholder {
     color:#545a92;
 }
 
+
+/*==================================
+Page recapitulatif
+ ==================================*/
 .block-recap-one{
     text-align: center;
 }
@@ -325,3 +331,7 @@ textarea::-webkit-input-placeholder {
     right: 10%;
     top: 32%;
 }
+
+/*===================================
+
+=================================== */
