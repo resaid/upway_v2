@@ -26,8 +26,30 @@
 }
 .icon-star{
     content: url("../img/icon/star.svg");
-    width: 20%;
 }
+.icon-map{
+    content: url("../img/icon/map.svg");
+}
+.icon-auto{
+    content: url("../img/icon/auto.svg");
+}
+.icon-location{
+    content: url("../img/icon/location.svg");
+}
+.icon-meteo{
+    content: url("../img/icon/meteo.svg");
+}
+.icon-daynight{
+    content: url("../img/icon/daynight.svg");
+}
+.icon-temps{
+    content: url("../img/icon/wall-clock.svg");
+}
+.icon-level1-4{
+    content: url("../img/icon/level1-4.svg");
+}
+.icon-size{width: 35px;}
+.icon-size-level{width: 60px;}
 /*.icon-up::before{
     content: url("../img/icon/up-blanc.svg");
 }
@@ -164,6 +186,12 @@ hr {
     width: 70%;
 }
 
+.container-main {
+    padding: 0;
+    margin: auto;
+    width: 80%;
+}
+
 /*******************************/
 
 .circle-white {
@@ -197,7 +225,7 @@ hr {
 .sprite-niveau {
     width: 80px;
     height: 80px;
-    background-image: url(../img/level.svg);
+    background-image: url(../img/icon/level.svg);
     background-size: 400px;
     background-position: 0 0;
 }
@@ -220,6 +248,16 @@ textarea::-webkit-input-placeholder {
 .block-recap-one{
     text-align: center;
 }
+.section-recap-one {
+    height: 30%;
+    padding: 35px 0;
+    background: cadetblue;
+}
 .section-recap-two{
     background: #454eb5;
+    padding: 20px 0;
+}
+.info-icon{
+    text-align: left;
+    padding: 0 10px;
 }
