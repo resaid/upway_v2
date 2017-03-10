@@ -16,6 +16,9 @@
 }
 .bar.bar-stable .title {
     color: #fff !important;
+    padding: 0 25px;
+    font-weight: 300;
+    font-size: 16px;
 }
 
 /*=============================
