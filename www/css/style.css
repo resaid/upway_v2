@@ -289,20 +289,23 @@ textarea::-webkit-input-placeholder {
     text-align: center;
 }
 .section-recap-one {
-    height: 30%;
-    padding: 35px 0;
+    height: 35%;
+    padding: 60px 0;
     background: cadetblue;
 }
 .section-recap-two{
     background: #454eb5;
     padding: 20px 0;
     color: #fff;
+    font-size: 12px;
 }
 .info-icon{
     text-align: left;
+    display: flex;
+    align-items: center;
 }
 .block-btn-recap .button-positive {
-    padding: 0 30px;
+    padding: 0 20px;
     border: none;
     border-radius: 0;
     text-transform: uppercase;
@@ -310,4 +313,15 @@ textarea::-webkit-input-placeholder {
 .block-btn-recap .button-positive:first-child {
     border: 2px solid #ffffff;
     background: transparent;
+}
+.btn-add{
+    border-radius: 50%;
+    border: none;
+    width: 40px;
+    height: 40px;
+    font-size: 25px;
+    position: absolute;
+    text-align: center;
+    right: 10%;
+    top: 32%;
 }
