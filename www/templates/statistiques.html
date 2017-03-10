@@ -1,32 +1,38 @@
 <ion-view title="Récapitulatif">
-    <ion-nav-buttons side="left">
-       <button menu-toggle="left"class="button button-icon icon-up"></button>
-    </ion-nav-buttons>
+        <ion-nav-buttons side="left">
+            <button menu-toggle="left"class="button button-icon icon-up"></button>
+        </ion-nav-buttons>
 
-   <ion-nav-buttons side="right">
-        <button class="button button-icon icon"></button>
-    </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+            <button class="button button-icon icon"></button>
+        </ion-nav-buttons>
+    <div class="bar bar-subheader">
+        <div class="tabs">
+            <a class="tab-item">
+                Statistiques
+            </a>
+            <a class="tab-item">
+                Anciens trajets
+            </a>
+        </div>
+    </div>
 
     <ion-content padding id="main">
         <div class="page">
-            <section class="section-recap-one">
+            <section class="section-stats-one">
                <div class="container-main block-recap-one center ">
-                    <i class="icon-size icon-star"></i>
-                   <br>
-                   <span class="point-xp">+570xp</span>
-                   <p>Vous avez atteint <br> l'objectif de la séance !</p>
+                   <i class="icon-size-level icon-level1-4"></i>
+                   <p>Vous êtes maintenant</p>
+                   <span class="point-xp">niveau 5.</span>
+                   <div class="bar-niveau center mtop10 mbot5">
+                       <div class="niveau"></div>
+                   </div>
+                   <p class="txt-small">300xp / <b>450xp</b></p>
                </div>
             </section>
-            <button class="btn-add"><ion-icon name="add" class="ion-android-add"></ion-icon></button>
-            <section class="section-recap-two">
+            <section class="section-stats-two">
                 <div class="container-main block-recap-two center ">
-                    <i class="icon-size-level icon-level1-4"></i>
-                    <p>Vous êtes maintenant</p>
-                    <span class="point-xp">niveau 5.</span>
-                    <div class="bar-niveau center mtop10 mbot5">
-                        <div class="niveau"></div>
-                    </div>
-                    <p class="txt-small">300xp / <b>450xp</b></p>
+
 
                     <div class="infos-recap mtop30">
                         <div class="info-temps info-icon mbot20">

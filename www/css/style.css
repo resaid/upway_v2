@@ -292,7 +292,7 @@ textarea::-webkit-input-placeholder {
 
 
 /*==================================
-Page recapitulatif
+Page récapitulatif
  ==================================*/
 .block-recap-one{
     text-align: center;
@@ -333,8 +333,26 @@ Page recapitulatif
     text-align: center;
     right: 10%;
     top: 32%;
+    color: #9D97AA;
+    background: #FFFEFF;
 }
 
 /*===================================
-
+Page Statistique
 =================================== */
+.section-stats-one{
+    position:relative;
+    height: 50%;
+    padding: 100px 0;
+    background: cadetblue;
+   /* background: ;
+    background-size: cover;*/
+}
+/*.section-stats-one:before {
+   content: url("../img/caleb-george.jpg");
+    position:absolute;
+    top:0;
+    left:0;
+    opacity:.75;
+    z-index:-1;
+}*/
