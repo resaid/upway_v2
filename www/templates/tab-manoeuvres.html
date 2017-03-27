@@ -1,7 +1,16 @@
-<ion-view  hide-nav-bar="true">
-    <ion-content padding id="main">
-        <div class="page">
-            
+<ion-view title="Détails du trajet" hide-nav-bar="true">
+    <ion-nav-buttons side="left">
+        <button menu-toggle="left" class="button button-icon icon-up"></button>
+    </ion-nav-buttons>
+    <ion-content padding class="bg-manoeuvres" id="main">
+        <div class="page container-70-auto">
+            <p class="center mtop40 mbot20">Combien de manoeuvres<br/><b>avez-vous effectuées ?</b></p>
+            <div class="compteur-manoeuvres center">
+                <button id="ctp-manoeuvres-decrem" class="btn-circle fleft">-</button>
+                <p id="cpt-manoeuvres" class="vertical-center">2</p>
+                <button id="ctp-manoeuvres-increm" class="btn-circle fright">+</button>
+            </div>
+            <a href="#/tab/recap_trajet"><button class="center btn-med btn-white mtop30">Suivant</button></a>
         </div>
     </ion-content>
 </ion-view>

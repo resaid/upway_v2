@@ -1,7 +1,29 @@
-<ion-view  hide-nav-bar="true">
+<ion-view title="Trajet en cours">
+    <ion-nav-buttons side="left">
+        <button menu-toggle="left" class="button button-icon icon-up"></button>
+    </ion-nav-buttons>
     <ion-content padding id="main">
         <div class="page">
-
+            <div class="height_50vh" id="map"></div>
+            <div class="height_50vh bg-trajet relative">
+                <div class="vertical-center full-width">
+                    <div class="info-stat-header pbot5">
+                        <p class="txt-small center">3ème séance</p>
+                        <div class="center ptop5 pbot5">
+                            <div class="hr-picto-stat2 center mtop20 mbot20">
+                                <img class="bg-blue icon-large align-picto2 vertical-center" src="../img/icon/auto.svg">
+                            </div>
+                        </div>
+                    </div>
+                    <p class="txt-small center mbot10">OBJECTIF : 50KM</p>
+                    <div class="info-stat-header">
+                        <div class="center">
+                            <img class="icon-xlarge" src="../img/icon/road.svg">
+                        </div>
+                    </div>
+                    <a href="#/tab/day_night"><button class="btn-med center btn-white mtop10">Terminer</button></a>
+                </div>
+            </div>
         </div>
     </ion-content>
 </ion-view>

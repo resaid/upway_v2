@@ -42,11 +42,23 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   
   /* LOGIN + INSCRIPTION */
   
+  
+  .state('tab.home', {
+    url: '/home',
+    views: {
+      'tab-home': {
+        templateUrl: 'templates/tab-home.html',
+        controller: 'HomeCtrl'
+      }
+    }
+  })
+  
   .state('tab.login', {
     url: '/login',
     views: {
       'tab-login': {
-        templateUrl: 'templates/tab-login.html'
+        templateUrl: 'templates/tab-login.html',
+        controller: 'HomeCtrl'
       }
     }
   })
@@ -55,29 +67,30 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     url: '/inscription',
     views: {
       'tab-inscription': {
-        templateUrl: 'templates/tab-inscription.html'
+        templateUrl: 'templates/tab-inscription.html',
+        controller: 'HomeCtrl'
       }
     }
   })
   
-  /* ACCUEIL */
+  /* PAGES STATIC */
   
   .state('tab.accueil', {
     url: '/accueil',
     views: {
       'tab-accueil': {
-        templateUrl: 'templates/tab-accueil.html'
+        templateUrl: 'templates/tab-accueil.html',
+        controller: 'StaticCtrl'
       }
     }
   })
   
-  /* STATS + ANCIENS TRAJETS */
-  
   .state('tab.statistiques', {
-      url: '/statistiques',
-      views: {
-        'tab-statistiques': {
-          templateUrl: 'templates/statistiques.html'
+    url: '/statistiques',
+    views: {
+      'tab-statistiques': {
+        templateUrl: 'templates/tab-statistiques.html',
+        controller: 'StaticCtrl'
         }
       }
     })
@@ -86,7 +99,18 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     url: '/anciens_trajets',
     views: {
       'tab-anciens_trajets': {
-        templateUrl: 'templates/tab-anciens_trajets.html'
+        templateUrl: 'templates/tab-anciens_trajets.html',
+        controller: 'StaticCtrl'
+      }
+    }
+  })
+  
+  .state('tab.fiches', {
+    url: '/fiches',
+    views: {
+      'tab-fiches': {
+        templateUrl: 'templates/tab-fiches.html',
+        controller: 'StaticCtrl'
       }
     }
   })
@@ -97,7 +121,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     url: '/trajet_current',
     views: {
       'tab-trajet_current': {
-        templateUrl: 'templates/tab-trajet_current.html'
+        templateUrl: 'templates/tab-trajet_current.html',
+          controller: 'TrajetcurrentCtrl'
       }
     }
   })
@@ -126,57 +151,21 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     url: '/manoeuvres',
     views: {
       'tab-manoeuvres': {
-        templateUrl: 'templates/tab-manoeuvres.html'
+        templateUrl: 'templates/tab-manoeuvres.html',
+        controller: 'FintrajetCtrl'
       }
     }
   })
   
   .state('tab.recap_trajet', {
-      url: '/recap_trajet',
-      views: {
-        'tab-recap_trajet': {
-          templateUrl: 'templates/tab-recap_trajet.html'
+    url: '/recap_trajet',
+    views: {
+      'tab-recap_trajet': {
+        templateUrl: 'templates/tab-recap_trajet.html',
+        controller: 'FintrajetCtrl'
         }
       }
-    })
-  
-  /* FICHES PEDAGOGIQUES */
-  
-  .state('tab.fiches', {
-    url: '/fiches',
-    views: {
-      'tab-fiches': {
-        templateUrl: 'templates/tab-fiches.html'
-      }
-    }
-  })
-  
-  
-  
-  
-  
-
-  
-  /*
-  .state('tab.chat-detail', {
-      url: '/chats/:chatId',
-      views: {
-        'tab': {
-          templateUrl: 'templates/chat-detail.html',
-        }
-      }
-    })*/
-
-  .state('tab.home', {
-    url: '/home',
-    views: {
-      'tab-home': {
-        templateUrl: 'templates/tab-home.html'
-        //controller: 'HomeCtrl'
-      }
-    }
-
-  });
+    });
 
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/tab/home');

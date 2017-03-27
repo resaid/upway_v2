@@ -3,21 +3,55 @@ Create tabs with an icon and label, using the tabs-positive style.
 Each tab's child <ion-nav-view> directive will have its own
 navigation history that also transitions its views in and out.
 -->
+
 <ion-tabs class="tabs-icon-top tabs-color-active-positive" ng-class="$root.tabsHidden">
 
-  <!-- Dashboard Tab -->
-  <ion-tab  icon-off="ion-document" icon-on="ion-android-document" href="#/tab/login">
-    <ion-nav-view name="tab-login"></ion-nav-view>
-  </ion-tab>
+    <!-- MENU -->
+    <ion-tab hidden="true" href="#/tab/fiches">
+        <ion-nav-view name="tab-fiches"></ion-nav-view>
+    </ion-tab>
+    <ion-tab hidden="true" href="#/tab/statistiques">
+        <ion-nav-view name="tab-statistiques"></ion-nav-view>
+    </ion-tab>
+    <ion-tab hidden="true" href="#/tab/reglages">
+        <ion-nav-view name="tab-reglages"></ion-nav-view>
+    </ion-tab>
 
-  <!-- Chats Tab -->
-  <ion-tab icon-off="ion-ios-pie-outline" icon-on="ion-ios-pie" href="#/tab/anciens_trajets" hidden="false">
-    <ion-nav-view name="tab-anciens_trajets"></ion-nav-view>
-  </ion-tab>
-
-  <!-- Account Tab -->
-  <ion-tab  icon-off="ion-ios-gear-outline" icon-on="ion-ios-gear" href="#/tab/statistiques">
-    <ion-nav-view name="tab-statistiques"></ion-nav-view>
-  </ion-tab>
+        <!-- start -->
+    <ion-tab hidden="true" href="#/tab/home">
+        <ion-nav-view name="tab-home"></ion-nav-view>
+    </ion-tab>
+    <ion-tab hidden="true" href="#/tab/login">
+        <ion-nav-view name="tab-login"></ion-nav-view>
+    </ion-tab>
+    <ion-tab hidden="true" href="#/tab/inscription">
+        <ion-nav-view name="tab-inscription"></ion-nav-view>
+    </ion-tab>
+  
+        <!-- divers -->
+    <ion-tab hidden="true" href="#/tab/accueil">
+        <ion-nav-view name="tab-accueil"></ion-nav-view>
+    </ion-tab>
+    <ion-tab hidden="true" href="#/tab/anciens_trajets">
+        <ion-nav-view name="tab-anciens_trajets"></ion-nav-view>
+    </ion-tab>
+    
+        <!-- trajet -->
+    <ion-tab hidden="true" href="#/tab/trajet_current">
+        <ion-nav-view name="tab-trajet_current"></ion-nav-view>
+    </ion-tab>
+    <ion-tab hidden="true" href="#/tab/day_night">
+        <ion-nav-view name="tab-day_night"></ion-nav-view>
+    </ion-tab>
+    <ion-tab hidden="true" href="#/tab/meteo">
+        <ion-nav-view name="tab-meteo"></ion-nav-view>
+    </ion-tab>
+    <ion-tab hidden="true" href="#/tab/manoeuvres">
+        <ion-nav-view name="tab-manoeuvres"></ion-nav-view>
+    </ion-tab>
+    <ion-tab hidden="true" href="#/tab/recap_trajet">
+        <ion-nav-view name="tab-recap_trajet"></ion-nav-view>
+    </ion-tab>
 
 </ion-tabs>
+

@@ -1,24 +1,20 @@
-<ion-view title="Détails">
+<ion-view title="Anciens trajets">
     <ion-nav-buttons side="left">
-        <button menu-toggle="left"class="button button-icon icon-up"></button>
-    </ion-nav-buttons>
-
-    <ion-nav-buttons side="right">
-        <button class="button button-icon icon"></button>
+        <a href="#/tab/accueil"><button menu-toggle="left" class="button button-icon icon-up"></button></a>
     </ion-nav-buttons>
     <div class="bar bar-subheader">
         <div class="tabs tabs-sub">
             <a class="tab-item" href="#/tab/statistiques">
                 Statistiques
             </a>
-            <a class="tab-item" href="#/tab/anciens_trajets">
+            <a class="tab-item active" href="#/tab/anciens_trajets">
                 Anciens trajets
             </a>
         </div>
     </div>
 
     <ion-content padding id="main">
-        <div class="page">
+        <div class="page bg-end-trajet">
             <div class="list-old-road">
                 <a class="item item-icon-left item-icon-right" href="#">
                     <i class="icon icon-road"></i>
