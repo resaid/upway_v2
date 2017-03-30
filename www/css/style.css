@@ -632,6 +632,15 @@ Page connexion et registre
 .section-connect span,.section-registre span{
     color:#545a92;
 }
+/*======================
+    Popup infos
+====================== */
+.popup-body {
+    padding: 15px;
+}
+.popup-body span{
+    font-size: 14px;
+}
 
 .separation {
     width: 100%;
