@@ -1,8 +1,93 @@
 angular.module('starter.controllers', [])
 
-.controller('HomeCtrl', function($scope)
+.controller('RegisterCtrl', function($scope, $state, $http, $ionicPopup)
     {
-    $scope.$root.tabsHidden = "tabs-hide";
+    $scope.register = function(user)
+        {
+        $http({
+            method: "post",
+            url: "http://upway-app.fr/app/register.php",
+            headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+            data: $.param(
+                {
+                usernom: user.nom,
+                userprenom: user.prenom,
+                usermail: user.mail,
+                userpassword: user.password
+                })
+            }).success(function(result)
+                {
+                $scope.data = result;
+                //alert("data = " + $scope.data.reponse);
+                if ($scope.data.reponse == "oui")
+                    {
+                    $ionicPopup.alert(
+                        {
+                        title:'Correct !'
+                        });
+                    $state.go('tab.accueil');
+                    }
+                else
+                    {
+                    $ionicPopup.alert(
+                        {
+                        title:'Mauvais identifiant/mot de passe !'
+                        });
+                    }
+                })
+            .error(function(data)
+                {
+                $ionicPopup.alert(
+                    {
+                    title:'Problème d\'accès réseau !'
+                    });
+                }
+            );
+        }
+    })
+
+.controller('LoginCtrl', function($scope, $state, $http, $ionicPopup)
+    {
+    $scope.login = function(user)
+        {
+        $http({
+            method: "post",
+            url: "http://upway-app.fr/app/login.php",
+            headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+            data: $.param(
+                {
+                e: user.mail,
+                p: user.password
+                })
+            }).success(function(result)
+                {
+                $scope.data = result;
+                //alert("data = " + $scope.data.reponse);
+                if ($scope.data.reponse == "oui")
+                    {
+                    $ionicPopup.alert(
+                        {
+                        title:'Correct !'
+                        });
+                    $state.go('tab.accueil');
+                    }
+                else
+                    {
+                    $ionicPopup.alert(
+                        {
+                        title:'Mauvais identifiant/mot de passe !'
+                        });
+                    }
+                })
+            .error(function(data)
+                {
+                $ionicPopup.alert(
+                    {
+                    title:'Problème d\'accès réseau !'
+                    });
+                }
+            );
+        }
     })
 
 .controller('FintrajetCtrl', function($scope, $state)
@@ -32,26 +117,45 @@ angular.module('starter.controllers', [])
 
 .controller('TrajetcurrentCtrl', function($scope)
     {
+    var map;
+    var control;
+    
     $scope.$root.tabsHidden = "tabs-hide";
     
-    updateCarte()
+    function updateCarte()
         {
-        setTimeout(function()
+        var onSuccess = function(position)
             {
-            //code
-            },500);
+            control.spliceWaypoints(control.getWaypoints().length, 1, L.latLng(position.coords.latitude, position.coords.longitude));
+            map.setView(L.latLng(position.coords.latitude, position.coords.longitude), 15);
+            setTimeout(function()
+                {
+                updateCarte();
+                }, 2000);
+            };
+            
+        navigator.geolocation.getCurrentPosition(onSuccess);
         }
                       
     function InitialiserCarte()
         {
-        var map = L.map('map').setView([45.0401373, 3.8798617], 16);
+        map = L.map('map').setView(L.latLng(45.0441373, 3.8658617), 15);
         var tuileUrl = 'http://{s}.tile.osm.org/{z}/{x}/{y}.png';
         var osm = L.tileLayer(tuileUrl, {
             minZoom: 8, 
             maxZoom: 17
         });
         osm.addTo(map);
-        var marker = L.marker([45.0401373, 3.8798617]).addTo(map);
+            
+        navigator.geolocation.getCurrentPosition(function(position)
+            {
+            control = L.Routing.control({
+                waypoints: [L.latLng(position.coords.latitude, position.coords.longitude), L.latLng(position.coords.latitude, position.coords.longitude)],
+                routeWhileDragging: false,
+                reverseWaypoints: true,
+                showAlternatives: false
+                }).addTo(map);
+            });
             
         updateCarte();
         }
