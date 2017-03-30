@@ -626,14 +626,12 @@ Page connexion et registre
     padding: 0;
     margin: 0;
 }
-.section-connect input, .section-registre input, .section-connect input::placeholder, .section-registre input::placeholder {
+.section-connect .item input, .section-registre .item input,.ng-touched::-webkit-input-placeholder {
     color: #fff;
 }
 .section-connect span,.section-registre span{
     color:#545a92;
 }
-
-
 
 .separation {
     width: 100%;
@@ -680,6 +678,7 @@ hr {
     margin: auto;
     width: 90%;
 }
+
 
 /*******************************/
 
@@ -800,18 +799,6 @@ hr {
     position: relative;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
 /* FICHES */
 
 .fiche-name {
@@ -833,25 +820,6 @@ hr {
     vertical-align: top;
     overflow: hidden;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /*==================================
 Page récapitulatif
