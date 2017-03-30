@@ -19,8 +19,7 @@ body {
     font-size: 14px;
 }
 ion-tabs .tab-nav {
-    background-color: transparent !important;
-    border: 0;
+    display: none;
 }
 .tabs-hide .tabs {
     display: none;
@@ -626,21 +625,14 @@ Page connexion et registre
     padding: 0;
     margin: 0;
 }
-.section-connect .item input, .section-registre .item input,.ng-touched::-webkit-input-placeholder {
+.section-connect input, .section-registre input, .section-connect input::placeholder, .section-registre input::placeholder {
     color: #fff;
 }
 .section-connect span,.section-registre span{
     color:#545a92;
 }
-/*======================
-    Popup infos
-====================== */
-.popup-body {
-    padding: 15px;
-}
-.popup-body span{
-    font-size: 14px;
-}
+
+
 
 .separation {
     width: 100%;
@@ -687,7 +679,6 @@ hr {
     margin: auto;
     width: 90%;
 }
-
 
 /*******************************/
 
@@ -808,6 +799,18 @@ hr {
     position: relative;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
 /* FICHES */
 
 .fiche-name {
@@ -829,6 +832,25 @@ hr {
     vertical-align: top;
     overflow: hidden;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*==================================
 Page récapitulatif
