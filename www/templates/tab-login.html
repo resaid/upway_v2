@@ -2,20 +2,22 @@
     <ion-content padding class="bg-home" id="main">
         <div class="page container-70-auto">
             <header class="header-logo center">
-                <img class="logo" src="../img/logo-monochrome.svg" alt="logo Upway"/>
+                <img class="logo" src="img/logo-monochrome.svg" alt="logo Upway"/>
             </header>
             <section class="block-bottom section-connect">
-                <div class="block-input mbot30">
-                    <label class="item item-input item-floating-label">
-                        <span class="input-label">Adresse e-mail</span>
-                        <input type="email" placeholder="Adresse e-mail">
-                    </label>
-                    <label class="item item-input item-floating-label">
-                        <span class="input-label">Mot de passe</span>
-                        <input type="password" placeholder="Mot de passe">
-                    </label>
-                </div>
-                <a href="#/tab/accueil"><button type="submit" class="btn-lg btn-beige">Connexion</button></a>
+                <form>
+                    <div class="block-input mbot30">
+                        <label class="item item-input item-floating-label">
+                            <span class="input-label">Adresse e-mail</span>
+                            <input type="email" placeholder="Adresse e-mail" ng-model="user.mail">
+                        </label>
+                        <label class="item item-input item-floating-label">
+                            <span class="input-label">Mot de passe</span>
+                            <input type="password" placeholder="Mot de passe" ng-model="user.password">
+                        </label>
+                    </div>
+                    <button type="submit" class="btn-lg btn-beige" ng-click="login(user)">Connexion</button>
+                </form>
             </section>
         </div>
     </ion-content>

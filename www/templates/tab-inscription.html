@@ -2,28 +2,28 @@
     <ion-content padding class="bg-home" id="main">
         <div class="page container-70-auto">
             <header class="header-logo center">
-                <img class="logo" src="../img/logo-monochrome.svg" alt="logo Upway"/>
+                <img class="logo" src="img/logo-monochrome.svg" alt="logo Upway"/>
             </header>
             <section class="block-bottom section-registre">
                 <div class="block-input mbot30">
                     <label class="item item-input item-floating-label">
                         <span class="input-label">Nom</span>
-                        <input type="text" placeholder="Nom">
+                        <input type="text" placeholder="Nom" ng-model="user.nom">
                     </label>
                     <label class="item item-input item-floating-label">
                         <span class="input-label">Prénom</span>
-                        <input type="text" placeholder="Prénom">
+                        <input type="text" placeholder="Prénom" ng-model="user.prenom">
                     </label>
                     <label class="item item-input item-floating-label">
                         <span class="input-label">Adresse e-mail</span>
-                        <input type="email" placeholder="Adresse e-mail">
+                        <input type="email" placeholder="Adresse e-mail" ng-model="user.mail">
                     </label>
                     <label class="item item-input item-floating-label">
                         <span class="input-label">Mot de passe</span>
-                        <input type="password" placeholder="Mot de passe">
+                        <input type="password" placeholder="Mot de passe" ng-model="user.password">
                     </label>
                 </div>
-                <button type="submit" class="btn-lg btn-blue">Inscription</button>
+                <button type="submit" class="btn-lg btn-blue" ng-click="register(user)">Inscription</button>
             </section>
         </div>
     </ion-content>
