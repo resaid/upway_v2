@@ -31,7 +31,8 @@ angular.module('starter.controllers', [])
                     {
                     $ionicPopup.alert(
                         {
-                        title:'Mauvais identifiant/mot de passe !'
+                        title:'Connexion',
+                            template:'Mauvais identifiant/mot de passe !'
                         });
                     }
                 })
