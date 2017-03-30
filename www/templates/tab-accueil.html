@@ -2,11 +2,11 @@
     <ion-content padding class="bg-accueil page-accueil" id="main">
         <div class="page vertical-center">
             <div class="sprite-niveau center mbot10"></div>
-            <p class="center">Vous êtes<br/><b>Niveau 2</b></p>
+            <p class="center">Vous êtes<br/><b>niveau {{ statistiques.user_level }}</b></p>
             <div class="bar-niveau center mtop30 mbot5">
                 <div class="niveau"></div>
             </div>
-            <p class="center txt-small">300xp / <b>450xp</b></p>
+            <p class="center txt-small">{{ statistiques.user_point_xp }}xp / <b>450xp</b></p>
             <a href="#/tab/trajet_current">
                 <div class="circle-white center mtop30">
                     <p class="txt-small"><img class="icon-medium" src="img/demarrer.svg" alt="démarrer"><br/><b>Démarrer</b></p>
@@ -14,19 +14,19 @@
             </a>
         </div>
         <div class="menu-bottom">
-                <a class="menu-icon-left" href="#/tab/fiches">
-                    <img class="icon-medium" src="img/icon/sheets.svg" />
-                </a>
+            <a class="menu-icon-left" href="#/tab/fiches">
+                <img class="icon-medium" src="img/icon/sheets.svg" />
+            </a>
 
-                <!-- STATISTIQUES TAB -->
-                <a class="menu-icon-center" href="#/tab/statistiques">
-                    <img class="icon-medium" src="img/icon/stats.svg" />
-                </a>
+            <!-- STATISTIQUES TAB -->
+            <a class="menu-icon-center" href="#/tab/statistiques">
+                <img class="icon-medium" src="img/icon/stats.svg" />
+            </a>
 
-                <!-- REGLAGES TAB -->
-                <a class="menu-icon-right" href="#/tab/reglages">
-                    <img class="icon-medium" src="img/icon/settings.svg" />
-                </a>
+            <!-- REGLAGES TAB -->
+            <a class="menu-icon-right" href="#/tab/reglages">
+                <img class="icon-medium" src="img/icon/settings.svg" />
+            </a>
         </div>
     </ion-content>
 </ion-view>
