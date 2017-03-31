@@ -19,17 +19,17 @@
             <section class="ptop60 pbot30 bg-statistiques">
                <div class="block-recap-one center ">
                    <div class="sprite-niveau center mbot10"></div>
-                   <p class="txt-medium">Vous êtes <span id="point-xp"><b>niveau 5.</b></span></p>
+                   <p class="txt-medium">Vous êtes <span id="point-xp"><b>{{ statistiques.user_level }}</b></span></p>
                    <div class="bar-niveau center mtop10 mbot5">
                        <div class="niveau"></div>
                    </div>
-                   <p class="txt-small">300xp / <b>450xp</b></p>
+                   <p class="txt-small">{{ statistiques.user_point_xp }}xp / <b>450xp</b></p>
                </div>
             </section>
             <section>
                 <div class="full-width bg-blue-violet ptop30">
                     <div class="info-stat-header info-icon">
-                        <p class="txt-small center">1389 / 3000</p>
+                        <p class="txt-small center">{{ statistiques.user_distance_totale }} / 3000</p>
                         <div class="center mbot20 mtop20">
                             <div class="hr-picto-stat2 center mtop15 mbot10">
                                 <img class="bg-blue icon-large align-picto2 vertical-center" src="img/icon/auto-blanc.svg">
@@ -46,19 +46,19 @@
                         <div class="center mbot20">
                             <img class="icon-small" src="img/icon/wall-clock-blanc.svg">
                             <div class="hr-picto-stat2 center mtop10 mbot30">
-                                <p class="bg-violet txt-small align-picto2 vertical-center"> 11h 56 min 45 sc</p>
+                                <p class="bg-violet txt-small align-picto2 vertical-center"> {{ statistiques.user_duree_totale }}</p>
                             </div>
                         </div>
                         <div class="center mbot20">
                             <img class="icon-small" src="img/icon/location-blanc.svg">
                             <div class="hr-picto-stat2 center mtop10 mbot30">
-                                <p class="bg-violet txt-small align-picto2 vertical-center"> 255 km</p>
+                                <p class="bg-violet txt-small align-picto2 vertical-center"> {{ statistiques.user_distance_totale }} km</p>
                             </div>
                         </div>
                         <div class="center mbot20">
                             <img class="icon-small" src="img/icon/auto-blanc.svg">
                             <div class="hr-picto-stat2 center mtop10 mbot30">
-                                <p class="bg-violet align-picto2 vertical-center"> 26 manoeuvres</p>
+                                <p class="bg-violet align-picto2 vertical-center"> {{ statistiques.user_man_totales }} manoeuvres</p>
                             </div>
                         </div>
                     </div>

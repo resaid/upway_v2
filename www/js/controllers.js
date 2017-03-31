@@ -98,14 +98,14 @@ angular.module('starter.controllers', [])
 .controller('FintrajetCtrl', function($scope, $state)
     {
     $scope.$root.tabsHidden = "tabs-hide";
-    
+
     $(document).ready(function()
         {
         $('.box-end-trajet').click(function()
             {
             $(this).toggleClass("box-checked");
             });
-        
+
         $('#ctp-manoeuvres-decrem').click(function()
             {
             if ($('#cpt-manoeuvres').text() > 0)
@@ -124,9 +124,9 @@ angular.module('starter.controllers', [])
     {
     var map;
     var control;
-    
+
     $scope.$root.tabsHidden = "tabs-hide";
-    
+
     function updateCarte()
         {
         var onSuccess = function(position)
@@ -138,20 +138,20 @@ angular.module('starter.controllers', [])
                 updateCarte();
                 }, 2000);
             };
-            
+
         navigator.geolocation.getCurrentPosition(onSuccess);
         }
-                      
+
     function InitialiserCarte()
         {
         map = L.map('map').setView(L.latLng(45.0441373, 3.8658617), 15);
         var tuileUrl = 'http://{s}.tile.osm.org/{z}/{x}/{y}.png';
         var osm = L.tileLayer(tuileUrl, {
-            minZoom: 8, 
+            minZoom: 8,
             maxZoom: 17
         });
         osm.addTo(map);
-            
+
         navigator.geolocation.getCurrentPosition(function(position)
             {
             control = L.Routing.control({
@@ -161,10 +161,10 @@ angular.module('starter.controllers', [])
                 showAlternatives: false
                 }).addTo(map);
             });
-            
+
         updateCarte();
         }
-    
+
     $(document).ready(function()
         {
         InitialiserCarte();

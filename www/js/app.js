@@ -79,7 +79,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     views: {
       'tab-accueil': {
         templateUrl: 'templates/tab-accueil.html',
-        controller: 'StaticCtrl'
+        controller: 'AccueilCtrl'
       }
     }
   })
@@ -89,7 +89,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     views: {
       'tab-statistiques': {
         templateUrl: 'templates/tab-statistiques.html',
-        controller: 'StaticCtrl'
+        controller: 'AccueilCtrl'
         }
       }
     })
