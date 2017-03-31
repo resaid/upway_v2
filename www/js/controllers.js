@@ -148,6 +148,51 @@ angular.module('starter.controllers', [])
             $('#cpt-manoeuvres').text(parseInt($('#cpt-manoeuvres').text()) + 1);
             });
         });
+
+        $scope.temps = function(user)
+        {
+            $http({
+                method: "post",
+                url: "http://upway-app.fr/app/temps.php",
+                headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+                data: $.param(
+                    {
+                        usernom: user.nom,
+                        userprenom: user.prenom,
+                        usermail: user.mail,
+                        userpassword: user.password
+                    })
+            }).success(function(result)
+            {
+                if (result.reponse == "oui")
+                {
+                    $ionicPopup.alert(
+                        {
+                            title:'Inscription',
+                            template:'Votre inscription est pris en compte!'
+                        });
+                    $state.go('tab.accueil');
+                }
+                else
+                {
+                    $ionicPopup.alert(
+                        {
+                            title:'Inscription',
+                            template:'Veuillez remplir tous les champs !'
+                        });
+                }
+            })
+                .error(function(data)
+                    {
+                        $ionicPopup.alert(
+                            {
+                                title:'Réseau',
+                                template:'Problème d\'accès réseau !'
+                            });
+                    }
+                );
+        }
+
     })
 
 .controller('TrajetcurrentCtrl', function($scope)
@@ -200,6 +245,14 @@ angular.module('starter.controllers', [])
 
     })
 
+.controller('FichCtrl', function($scope,$rootScope)
+    {
+        $scope.$on('$ionicView.beforeEnter', function() {
+            $rootScope.viewColor = '#fff ';
+        });
+    })
+
 .controller('StaticCtrl', function($scope)
     {
-    })
+
+    });

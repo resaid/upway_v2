@@ -109,7 +109,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     views: {
       'tab-fiches': {
         templateUrl: 'templates/tab-fiches.html',
-        controller: 'StaticCtrl'
+        controller: 'FichCtrl'
       }
     }
   })
