@@ -1,4 +1,4 @@
-angular.module('starter.controllers', [])
+angular.module('starter.controllers', ['ionic','ngCordova'])
 
 .controller('RegisterCtrl', function($scope, $state, $http, $ionicPopup)
     {
@@ -21,8 +21,7 @@ angular.module('starter.controllers', [])
                     {
                     $ionicPopup.alert(
                         {
-                         title:'Inscription',
-                         template:'Votre inscription est pris en compte!'
+                        title:'Correct !'
                         });
                     $state.go('tab.accueil');
                     }
@@ -30,8 +29,7 @@ angular.module('starter.controllers', [])
                     {
                     $ionicPopup.alert(
                         {
-                            title:'Inscription',
-                            template:'Veuillez remplir tous les champs !'
+                        title:'Mauvais identifiant/mot de passe !'
                         });
                     }
                 })
@@ -39,8 +37,7 @@ angular.module('starter.controllers', [])
                 {
                 $ionicPopup.alert(
                     {
-                        title:'Réseau',
-                        template:'Problème d\'accès réseau !'
+                    title:'Problème d\'accès réseau !'
                     });
                 }
             );
@@ -70,8 +67,7 @@ angular.module('starter.controllers', [])
                     sessionStorage.setItem('user_prenom', result.user_prenom);
                     $ionicPopup.alert(
                         {
-                            title:'Connexion',
-                            template:'Vous êtes connecté'
+                        title:'Correct !'
                         });
                     $state.go('tab.accueil');
                     }
@@ -79,9 +75,7 @@ angular.module('starter.controllers', [])
                     {
                     $ionicPopup.alert(
                         {
-                            title:'Connexion',
-                            template:'Mauvais identifiant/mot de passe !'
-
+                        title:'Mauvais identifiant/mot de passe !'
                         });
                     }
                 })
@@ -89,8 +83,7 @@ angular.module('starter.controllers', [])
                 {
                 $ionicPopup.alert(
                     {
-                        title:'Réseau',
-                        template:'Problème d\'accès réseau !'
+                    title:'Problème d\'accès réseau !'
                     });
                 }
             );
@@ -117,6 +110,7 @@ angular.module('starter.controllers', [])
                     //alert("logged");
                     $scope.statistiques = result;
                     sessionStorage.setItem('user_statistiques', $scope.statistiques);
+                    $('.niveau').css('width', ($scope.statistiques.user_point_xp * 100 / 450) + '%');
                     }
                 })
             .error(function(error)
@@ -133,7 +127,16 @@ angular.module('starter.controllers', [])
         {
         $('.box-end-trajet').click(function()
             {
-            $(this).toggleClass("box-checked");
+            if ($(this).hasClass("box-checked"))
+                {
+                $(this).next('input').val(0);
+                $(this).removeClass("box-checked");
+                }
+            else
+                {
+                $(this).next('input').val(1);
+                $(this).addClass("box-checked");
+                }
             });
         
         $('#ctp-manoeuvres-decrem').click(function()
@@ -150,24 +153,24 @@ angular.module('starter.controllers', [])
         });
     })
 
-.controller('TrajetcurrentCtrl', function($scope)
+.controller('TrajetcurrentCtrl', function($scope, $ionicPopup, $ionicPlatform, $cordovaGeolocation)
     {
+    var posOptions = {
+        enableHighAccuracy: true,
+        timeout: 20000,
+        maximumAge: 0
+        };
     var map;
     var control;
 
     function updateCarte()
         {
-        var onSuccess = function(position)
+        $cordovaGeolocation.getCurrentPosition(posOptions).then(function (position)
             {
+            alert("POSITION OK CORDOVA PLUGIN");
             control.spliceWaypoints(control.getWaypoints().length, 1, L.latLng(position.coords.latitude, position.coords.longitude));
             map.setView(L.latLng(position.coords.latitude, position.coords.longitude), 15);
-            setTimeout(function()
-                {
-                updateCarte();
-                }, 2000);
-            };
-            
-        navigator.geolocation.getCurrentPosition(onSuccess);
+            });
         }
                       
     function InitialiserCarte()
@@ -180,7 +183,7 @@ angular.module('starter.controllers', [])
         });
         osm.addTo(map);
             
-        navigator.geolocation.getCurrentPosition(function(position)
+        $cordovaGeolocation.getCurrentPosition().then(function (position)
             {
             control = L.Routing.control({
                 waypoints: [L.latLng(position.coords.latitude, position.coords.longitude), L.latLng(position.coords.latitude, position.coords.longitude)],
@@ -188,9 +191,19 @@ angular.module('starter.controllers', [])
                 reverseWaypoints: true,
                 showAlternatives: false
                 }).addTo(map);
+            $ionicPopup.alert(
+                {
+                title:'Lancement du trajet'
+                });
+            }, function(error)
+            {
+            alert('error geolocation');
             });
             
-        updateCarte();
+        setTimeout(function()
+            {
+            updateCarte();
+            }, 2000);
         }
     
     $(document).ready(function()
@@ -198,6 +211,11 @@ angular.module('starter.controllers', [])
         InitialiserCarte();
         })
 
+    })
+
+.controller('ProfilCtrl', function($scope)
+    {
+    
     })
 
 .controller('StaticCtrl', function($scope)
