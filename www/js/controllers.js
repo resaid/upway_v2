@@ -40,7 +40,8 @@ angular.module('starter.controllers', [])
                 {
                 $ionicPopup.alert(
                     {
-                    title:'Problème d\'accès réseau !'
+                        title:' Réseau !',
+                        template:'Problème d\'accès réseau !'
                     });
                 }
             );
@@ -62,13 +63,14 @@ angular.module('starter.controllers', [])
                 })
             }).success(function(result)
                 {
-                $scope.data = result;
+                //$scope.data = result;
                 //alert("data = " + $scope.data.reponse);
                 if ($scope.data.reponse == "oui")
                     {
                     $ionicPopup.alert(
                         {
-                        title:'Correct !'
+                            title:'Connexion',
+                            template:'Vous êtes connecté'
                         });
                     $state.go('tab.accueil');
                     }
