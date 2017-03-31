@@ -29,7 +29,8 @@ angular.module('starter.controllers', [])
                     {
                     $ionicPopup.alert(
                         {
-                        title:'Mauvais identifiant/mot de passe !'
+                            title:'Inscription',
+                            template:'Veuillez remplir tous les champs !'
                         });
                     }
                 })
@@ -37,7 +38,8 @@ angular.module('starter.controllers', [])
                 {
                 $ionicPopup.alert(
                     {
-                    title:'Problème d\'accès réseau !'
+                        title:'Réseau',
+                        template:'Problème d\'accès réseau !'
                     });
                 }
             );
@@ -67,7 +69,8 @@ angular.module('starter.controllers', [])
                     sessionStorage.setItem('user_prenom', result.user_prenom);
                     $ionicPopup.alert(
                         {
-                        title:'Correct !'
+                            title:'Connexion',
+                            template:'Vous êtes connecté'
                         });
                     $state.go('tab.accueil');
                     }
@@ -75,7 +78,9 @@ angular.module('starter.controllers', [])
                     {
                     $ionicPopup.alert(
                         {
-                        title:'Mauvais identifiant/mot de passe !'
+                            title:'Connexion',
+                            template:'Mauvais identifiant/mot de passe !'
+
                         });
                     }
                 })
@@ -83,7 +88,8 @@ angular.module('starter.controllers', [])
                 {
                 $ionicPopup.alert(
                     {
-                    title:'Problème d\'accès réseau !'
+                        title:'Réseau',
+                        template:'Problème d\'accès réseau !'
                     });
                 }
             );
