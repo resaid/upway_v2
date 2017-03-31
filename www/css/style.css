@@ -16,7 +16,8 @@ body {
 }
 .bar.bar-stable .title {
     color: #fff !important;
-    font-size: 14px;
+    font-size: 20px;
+    font-weight: 400;
 }
 ion-tabs .tab-nav {
     background-color: transparent !important;
@@ -176,14 +177,21 @@ p {
 .icon-up::before {
     content: url("../img/icon/up-blanc.svg");
 }
+.icon-campagne::before {
+    content: url("../img/icon/campagne-blanc.svg");
+}
+.icon-city::before {
+    content: url("../img/icon/city-blanc.svg");
+}
+.icon-autoroute::before {
+    content: url("../img/icon/autoroute-blanc.svg");
+}
 .button.button-icon::before {
     font-size: 25px !important;
 }
 .button-icon {
     width: 50px;
 }
-
-
 
 
 /* margin padding */
@@ -567,7 +575,7 @@ p {
     position: absolute;
     text-align: center;
     right: 10%;
-    top: 32%;
+    top: 28%;
     color: #9D97AA;
     background: #FFFEFF;
 }
@@ -613,7 +621,8 @@ p {
     background: #673BB7;
 }
 .bg-blue-violet {
-    background: linear-gradient(#3F51B5 0%, #673BB7 100%);
+    /*background: linear-gradient(#3F51B5 0%, #673BB7 100%);*/
+    background: linear-gradient(#3F51B5 30%, #673BB7 100%);
 }
 
 /*====================================
@@ -687,7 +696,33 @@ hr {
     margin: auto;
     width: 90%;
 }
+.bar-subheader {
+    padding:5px 0;
+}
+.tabs-striped.tabs-color-assertive .tab-item {
+    color: rgba(51, 51, 51, 0.4);
+    opacity: 1;
+    font-size: 20px;
 
+}
+
+.tabs-striped.tabs-color-assertive .tab-item.tab-item-active, .tabs-striped.tabs-color-assertive .tab-item.active, .tabs-striped.tabs-color-assertive .tab-item.activated {
+    /*margin-top: 3px;*/
+    color: #603DB7;
+    /*border: 0 solid #603DB7;
+    border-top-width: 2px;*/
+}
+.tabs-striped.tabs-color-assertive .tab-item.tab-item-active:before, .tabs-striped.tabs-color-assertive .tab-item.active:before, .tabs-striped.tabs-color-assertive .tab-item.activated:before {
+    content: '';
+    position: absolute;
+    left: 90px;
+    top: 4px;;
+    width: 0;
+    height: 0;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-top: 10px solid #603DB7;
+}
 
 /*******************************/
 
@@ -721,7 +756,7 @@ hr {
 .sprite-niveau {
     width: 80px;
     height: 80px;
-    background-image: url(../img/level.svg);
+    background-image: url(../img/level-blanc.svg);
     background-size: 400px;
     background-position: 0 0;
 }
@@ -834,7 +869,7 @@ hr {
 Page récapitulatif
  ==================================*/
 .section-recap-one {
-    height: 35%;
+    height: 30%;
     padding: 60px 0;
     background: cadetblue;
 }
@@ -862,9 +897,16 @@ Page Anciens trajet
 .list-old-road{
     padding: 45px 0;
 }
+.bg-end-trajet .item-icon-right .icon {
+    right: 40px;
+}
+.bg-end-trajet .item-icon-left .icon {
+    left: 40px;
+}
 .list-old-road a{
     text-transform: uppercase;
     font-size: 20px;
     font-weight: 500;
-    padding:16px 70px;
+    padding:16px 80px;
+    color: #fff;
 }
