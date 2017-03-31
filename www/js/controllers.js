@@ -21,7 +21,8 @@ angular.module('starter.controllers', [])
                     {
                     $ionicPopup.alert(
                         {
-                        title:'Correct !'
+                         title:'Inscription',
+                         template:'Votre inscription est pris en compte!'
                         });
                     $state.go('tab.accueil');
                     }
