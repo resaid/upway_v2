@@ -3,28 +3,27 @@
         <button menu-toggle="left" class="button button-icon icon-up"></button>
     </ion-nav-buttons>
     <ion-content padding class="bg-end-trajet" id="main">
-        <div class="page">
+        <div class="page page-daynight">
             <div class="full-width vertical border-pad-2vw">
                 <p class="center mbot20">Avez-vous roulé de<br/><b>jour ou de nuit ?</b></p>
-                <div class="box-end-trajet box-base" name="jour">
+                <div class="box-end-trajet box-base box-daynight">
                     <img class="icon-medium vertical-middle-box" src="img/end-trajet/day.svg" alt="">
                     <div class="box-end-trajet-content">
                         <p class="box-end-trajet-name txt-small vertical">Jour</p>
-                        <div class="box-end-trajet-check vertical"><img class="check" src="img/check.png" alt="check"></div>
+                        <div class="box-end-trajet-check vertical"><input type="checkbox" name="jour" /></div>
                     </div>
                     <img class="box-end-trajet-bg" src="img/end-trajet/jour.jpg" alt="background">
                 </div>
-                <input type="hidden" value="0" ng-model="" />
-                <div class="box-end-trajet box-base" name="nuit">
+                <div class="box-end-trajet box-base box-daynight">
                     <img class="icon-medium vertical-middle-box" src="img/end-trajet/night.svg" alt="">
                     <div class="box-end-trajet-content">
                         <p class="box-end-trajet-name txt-small vertical">Nuit</p>
-                        <div class="box-end-trajet-check vertical"><img class="check" src="img/check.png" alt="check"></div>
+                        <div class="box-end-trajet-check vertical"><input type="checkbox" name="nuit" /></div>
                     </div>
                     <img class="box-end-trajet-bg" src="img/end-trajet/nuit.jpg" alt="background">
                 </div>
-                <input type="hidden" value="0" ng-model="" />
-                <a href="#/tab/meteo"><button class="test center btn-med btn-white mtop30">Suivant</button></a>
+                <input id="input-daynight" type="hidden" />
+                <button ng-click="fintraj1()" class="test center btn-med btn-white mtop30">Suivant</button>
             </div>
         </div>
     </ion-content>

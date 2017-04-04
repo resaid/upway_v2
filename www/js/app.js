@@ -72,6 +72,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     }
   })
   
+  .state('tab.profil', {
+    url: '/profil',
+    views: {
+      'tab-login': {
+        templateUrl: 'templates/tab-profil.html',
+        controller: 'ProfilCtrl'
+      }
+    }
+  })
+  
   /* PAGES STATIC */
   
   .state('tab.accueil', {
@@ -109,7 +119,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     views: {
       'tab-fiches': {
         templateUrl: 'templates/tab-fiches.html',
-        controller: 'FichCtrl'
+        controller: 'StaticCtrl'
       }
     }
   })
@@ -131,7 +141,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     views: {
       'tab-day_night': {
         templateUrl: 'templates/tab-day_night.html',
-        controller: 'FintrajetCtrl'
+        controller: 'TrajetcurrentCtrl'
       }
     }
   })
@@ -141,7 +151,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     views: {
       'tab-meteo': {
         templateUrl: 'templates/tab-meteo.html',
-        controller: 'FintrajetCtrl'
+        controller: 'TrajetcurrentCtrl'
       }
     }
   })
@@ -151,7 +161,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     views: {
       'tab-manoeuvres': {
         templateUrl: 'templates/tab-manoeuvres.html',
-        controller: 'FintrajetCtrl'
+        controller: 'TrajetcurrentCtrl'
       }
     }
   })

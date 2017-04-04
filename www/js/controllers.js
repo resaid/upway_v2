@@ -46,7 +46,7 @@ angular.module('starter.controllers', ['ionic','ngCordova'])
 
 .controller('LoginCtrl', function($scope, $state, $http, $ionicPopup, $ionicHistory)
     {
-    $scope.login = function(user)
+    $scope.login = function(user)    
         {
         $http({
             method: "post",
@@ -59,15 +59,13 @@ angular.module('starter.controllers', ['ionic','ngCordova'])
                 })
             }).success(function(result)
                 {
-                //alert("data = " + result.status + "<br/>" + $scope.userdata.user_id + "<br/>" + $scope.userdata.user_nom + "<br/>" + $scope.userdata.user_prenom);
                 if (result.status == "logged")
                     {
-                    sessionStorage.setItem('user_id', result.user_id);
-                    sessionStorage.setItem('user_nom', result.user_nom);
-                    sessionStorage.setItem('user_prenom', result.user_prenom);
+                    $scope.user = result;
+                    sessionStorage.setItem('user', JSON.stringify($scope.user));
                     $ionicPopup.alert(
                         {
-                        title:'Correct !'
+                        title:'Correct ! '
                         });
                     $state.go('tab.accueil');
                     }
@@ -94,22 +92,21 @@ angular.module('starter.controllers', ['ionic','ngCordova'])
     {
     $(document).ready(function()
         {
-        //alert("id = " + sessionStorage.getItem('user_id'));
+        $scope.user = JSON.parse(sessionStorage.getItem('user'));
         $http({
             method: "post",
             url: "http://upway-app.fr/app/dataload.php",
             headers: {'Content-Type': 'application/x-www-form-urlencoded'},
             data: $.param(
                 {
-                id_user: sessionStorage.getItem('user_id')
+                id_user: $scope.user.user_id
                 })
             }).success(function(result)
                 {
                 if (result.status == "logged")
                     {
-                    //alert("logged");
                     $scope.statistiques = result;
-                    sessionStorage.setItem('user_statistiques', $scope.statistiques);
+                    sessionStorage.setItem('user_statistiques', JSON.stringify(result));
                     $('.niveau').css('width', ($scope.statistiques.user_point_xp * 100 / 450) + '%');
                     }
                 })
@@ -121,40 +118,17 @@ angular.module('starter.controllers', ['ionic','ngCordova'])
         });
     })
 
-.controller('FintrajetCtrl', function($scope, $state)
+.controller('FintrajetCtrl', function($scope, $state, $http, $ionicPopup, $ionicHistory)
     {
-    $(document).ready(function()
-        {
-        $('.box-end-trajet').click(function()
-            {
-            if ($(this).hasClass("box-checked"))
-                {
-                $(this).next('input').val(0);
-                $(this).removeClass("box-checked");
-                }
-            else
-                {
-                $(this).next('input').val(1);
-                $(this).addClass("box-checked");
-                }
-            });
-        
-        $('#ctp-manoeuvres-decrem').click(function()
-            {
-            if ($('#cpt-manoeuvres').text() > 0)
-                {
-                $('#cpt-manoeuvres').text(parseInt($('#cpt-manoeuvres').text()) - 1);
-                }
-            });
-        $('#ctp-manoeuvres-increm').click(function()
-            {
-            $('#cpt-manoeuvres').text(parseInt($('#cpt-manoeuvres').text()) + 1);
-            });
-        });
+    
     })
 
-.controller('TrajetcurrentCtrl', function($scope, $ionicPopup, $ionicPlatform, $cordovaGeolocation)
+.controller('TrajetcurrentCtrl', function($scope, $state, $http, $ionicPopup, $ionicPlatform, $cordovaGeolocation, $ionicHistory)
     {
+    $scope.trajet = {};
+    
+    $scope.user = JSON.parse(sessionStorage.getItem('user'));
+    
     var posOptions = {
         enableHighAccuracy: true,
         timeout: 20000,
@@ -162,14 +136,26 @@ angular.module('starter.controllers', ['ionic','ngCordova'])
         };
     var map;
     var control;
+    var routeArray = new Array();
 
     function updateCarte()
         {
         $cordovaGeolocation.getCurrentPosition(posOptions).then(function (position)
             {
-            alert("POSITION OK CORDOVA PLUGIN");
+            $ionicPopup.alert(
+                {
+                title:'POSITION OK CORDOVA PLUGIN'
+                });
             control.spliceWaypoints(control.getWaypoints().length, 1, L.latLng(position.coords.latitude, position.coords.longitude));
             map.setView(L.latLng(position.coords.latitude, position.coords.longitude), 15);
+
+            if (sessionStorage.getItem('trajet') == null)
+                {
+                setTimeout(function()
+                    {
+                    updateCarte();
+                    }, 2000);
+                }
             });
         }
                       
@@ -179,8 +165,8 @@ angular.module('starter.controllers', ['ionic','ngCordova'])
         var tuileUrl = 'http://{s}.tile.osm.org/{z}/{x}/{y}.png';
         var osm = L.tileLayer(tuileUrl, {
             minZoom: 8, 
-            maxZoom: 17
-        });
+            maxZoom: 15
+            });
         osm.addTo(map);
             
         $cordovaGeolocation.getCurrentPosition().then(function (position)
@@ -195,27 +181,153 @@ angular.module('starter.controllers', ['ionic','ngCordova'])
                 {
                 title:'Lancement du trajet'
                 });
+            setTimeout(function()
+                {
+                updateCarte();
+                }, 2000);
             }, function(error)
             {
             alert('error geolocation');
             });
-            
-        setTimeout(function()
-            {
-            updateCarte();
-            }, 2000);
         }
     
+    function savePoints()
+        {
+        $scope.trajet.points = control.getWaypoints();
+        }
+    
+    $scope.fintraj0 = function()
+        {
+        savePoints();
+        $scope.trajet.fin = true;
+        sessionStorage.setItem('trajet', JSON.stringify($scope.trajet));
+        $state.go('tab.day_night');
+        }
+    $scope.fintraj1 = function()
+        {
+        $scope.trajet = JSON.parse(sessionStorage.getItem('trajet'));
+        $scope.trajet.jour = $('input[name=jour]').prop('checked');
+        
+        sessionStorage.setItem('trajet', JSON.stringify($scope.trajet));
+        $state.go('tab.meteo');
+        }
+    $scope.fintraj2 = function()
+        {
+        $scope.trajet = JSON.parse(sessionStorage.getItem('trajet'));
+        $scope.trajet.tempsclair = $('input[name=tempsclair]').prop('checked');
+        $scope.trajet.pluie = $('input[name=pluie]').prop('checked');
+        $scope.trajet.neige = $('input[name=neige]').prop('checked');
+        $scope.trajet.brouillard = $('input[name=brouillard]').prop('checked');
+        
+        sessionStorage.setItem('trajet', JSON.stringify($scope.trajet));
+        $state.go('tab.manoeuvres');
+        }
+    $scope.fintraj3 = function()
+        {
+        $scope.trajet = JSON.parse(sessionStorage.getItem('trajet'));
+        $scope.trajet.man = $('#cpt-manoeuvres').text();
+        var pointsArray = new Array();
+        routeArray = $scope.trajet.points;
+        for (var i = 0; i < $scope.trajet.points.length; i++)
+            {
+            pointsArray[i] = "L.latLng(" + routeArray[i]['latLng']['lat'] + ", " + routeArray[i]['latLng']['lng'] + ")";
+            //alert(pointsArray[i]);
+            }
+        $http({
+            method: "post",
+            url: "http://upway-app.fr/app/saveTrajet.php",
+            headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+            data: $.param(
+                {
+                id_user: $scope.user.user_id,
+                    
+                jour: $scope.trajet.jour,
+                tempsclair: $scope.trajet.tempsclair,
+                pluie: $scope.trajet.pluie,
+                neige: $scope.trajet.neige,
+                brouillard: $scope.trajet.brouillard,
+                man: $scope.trajet.man,
+                    
+                "points_array[]": pointsArray
+                })
+            }).success(function(result)
+                {
+                alert(result.reponse);
+                if (result.reponse == "oui")
+                    {
+                    $ionicPopup.alert(
+                        {
+                        title:'Trajet enregistré !'
+                        });
+                    $state.go('tab.recap_trajet');
+                    }
+                else
+                    {
+                    $ionicPopup.alert(
+                        {
+                        title:'Erreur'
+                        });
+                    }
+                })
+            .error(function(data)
+                {
+                $ionicPopup.alert(
+                    {
+                    title:'Problème de réseau !'
+                    });
+                }
+            );
+        }
+
     $(document).ready(function()
         {
-        InitialiserCarte();
-        })
+        if (sessionStorage.getItem('trajet') == null)
+            {
+            InitialiserCarte();
+            }
+        else
+            {
+            $('.box-end-trajet').click(function()
+                {
+                var checkbox = $(this).children('.box-end-trajet-content').children('.box-end-trajet-check').children();
+                if  (checkbox.prop('checked') == true)
+                    {
+                    checkbox.prop('checked', false);
+                    $(this).removeClass("box-checked");
+                    }
+                else
+                    {
+                    checkbox.prop('checked', true);
+                    $(this).addClass("box-checked"); 
+                    }
+                });
 
+            $('.box-daynight').click(function()
+                {
+                $('.box-daynight').not($(this)).children('.box-end-trajet-content').children('.box-end-trajet-check').children().prop('checked', false)
+                $('.box-daynight').removeClass("box-checked");
+                $(this).addClass("box-checked");
+                $('#input-daynight').val($(this).attr('name'));
+                });
+
+            $('#ctp-manoeuvres-decrem').click(function()
+                {
+                if ($('#cpt-manoeuvres').text() > 0)
+                    {
+                    $('#cpt-manoeuvres').text(parseInt($('#cpt-manoeuvres').text()) - 1);
+                    }
+                });
+            $('#ctp-manoeuvres-increm').click(function()
+                {
+                $('#cpt-manoeuvres').text(parseInt($('#cpt-manoeuvres').text()) + 1);
+                });
+            }
+        });
     })
 
-.controller('ProfilCtrl', function($scope)
+.controller('ProfilCtrl', function($scope, $ionicHistory)
     {
-    
+    $scope.user = JSON.parse(sessionStorage.getItem('user'));
     })
 
 .controller('StaticCtrl', function($scope)

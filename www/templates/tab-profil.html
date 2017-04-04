@@ -1,5 +1,11 @@
 <ion-view view-title="Profil" name="dashboard-view">
-    <ion-content class="padding">
-        This is the secret admin area!
+    <ion-nav-buttons side="left">
+        <a href="#/tab/accueil"><button menu-toggle="left" class="button button-icon icon-up"></button></a>
+    </ion-nav-buttons>
+    <ion-content class="padding bg-accueil">
+        <div class="page container-90-auto">
+            <p class="center txt-large mtop20">Votre profil</p>
+            <p class="txt-small mtop30">{{ user.user_nom }}<br/>{{ user.user_prenom }}<br/>{{ user.user_email }}</p>
+        </div>
     </ion-content>
 </ion-view>
