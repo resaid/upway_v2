@@ -623,7 +623,7 @@ p {
     background: #673BB7;
 }
 .bg-blue-violet {
-    background: linear-gradient(#3F51B5 0%, #673BB7 100%);
+    background: linear-gradient(#3F51B5 35%, #673BB7 100%);
 }
 
 /*====================================
@@ -889,7 +889,19 @@ Page Statistique
     width: 30%;
     margin: auto;
 }
-
+/*===============================
+    Trajet en cours
+ ===============================*/
+.div-picto-stat2{
+    display: -webkit-flex;
+    -webkit-align-items: center;
+    display: flex;
+    align-items: center;
+}
+.div-picto-stat2 .align-picto2 {
+    -webkit-flex: 1;
+    flex: 1;
+}
 /*===========================
 Page Anciens trajet
  =============================*/
