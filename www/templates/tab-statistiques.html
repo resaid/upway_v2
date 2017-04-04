@@ -1,11 +1,11 @@
-<ion-view title="Détail">
+<ion-view title="Progression">
     <ion-nav-buttons side="left">
         <a href="#/tab/accueil"><button menu-toggle="left" class="button button-icon icon-up"></button></a>
     </ion-nav-buttons>
     <div class="bar bar-subheader">
         <div class="tabs-striped tabs-color-assertive">
             <div class="tabs tabs-sub">
-                <a class="tab-item  mright50 active-sub" href="#/tab/statistiques">
+                <a class="tab-item mright50 active-sub" href="#/tab/statistiques">
                     Statistiques
                 </a>
                 <a class="tab-item mright15" href="#/tab/anciens_trajets">
@@ -19,7 +19,7 @@
             <section class="ptop60 pbot30 bg-statistiques">
                <div class="block-recap-one center ">
                    <div class="sprite-niveau center mbot10"></div>
-                   <p class="txt-medium">Vous êtes <span id="point-xp"><b>{{ statistiques.user_level }}</b></span></p>
+                   <p class="txt-medium">Vous êtes <span id="point-xp"><b>niveau {{ statistiques.user_level }}</b></span></p>
                    <div class="bar-niveau center mtop10 mbot5">
                        <div class="niveau"></div>
                    </div>
@@ -35,7 +35,7 @@
                                 <img class="bg-blue icon-large align-picto2 vertical-center" src="img/icon/auto-blanc.svg">
                             </div>
                         </div>
-                        <p class="txt-small center mbot10">Il vous reste<br/>1611KM</p>
+                        <p class="txt-small center mbot10">Il vous reste<br/>{{ 3000 - statistiques.user_distance_totale }}KM</p>
                         <div class="center">
                             <img class="icon-xlarge" src="img/icon/road-blanc.svg">
                         </div>
