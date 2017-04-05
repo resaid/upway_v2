@@ -36,15 +36,15 @@
                 <div class="full-width bg-violet pbot60">
                     <div class="row responsive-sm">
                         <div class="col">
-                            <label class="item item-input input-profil">
-                                <input type="email" value="{{ user.user_email }}" ng-disabled="!editEmail">
-                                <i class="icon ion-edit placeholder-icon" ng-click="editEmail()"></i>
+                            <label class="item item-input input-profil" ng-init="editEmail=false">
+                                <input type="email"  placeholder="{{ user.user_email }}" ng-disabled="editEmail" ng-model="dataup.mail">
+                                <i class="icon ion-edit placeholder-icon" ng-click="editEmail = !editEmail"></i>
                             </label>
                         </div>
                         <div class="col">
-                            <label class="item item-input input-profil">
-                                <input type="password" value="********" placeholder="************" ng-disabled="!editPassword">
-                                <i class="icon ion-edit placeholder-icon" ng-click="editPassword()"></i>
+                            <label class="item item-input input-profil" >
+                                <input type="password" value="********" placeholder="************" ng-disabled="!inactive" ng-model="dataup.password">
+                                <i class="icon ion-edit placeholder-icon" ng-click="inactive = !inactive"></i>
                             </label>
                         </div>
                     </div>
@@ -63,7 +63,7 @@
                         <div class="col">
                         </div>
                         <div class="col col-50">
-                            <button class="button button-positive">Enregistrer</button>
+                            <button class="button button-positive" ng-click="updatep(dataup)">Enregistrer</button>
                         </div>
                         <div class="col">
                         </div>
