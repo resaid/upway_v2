@@ -995,3 +995,16 @@ Page Anciens trajet
     -moz-filter: brightness(1.2) grayscale(.5) opacity(.9);
     filter: brightness(1.2) grayscale(.5) opacity(.9);
 }
+
+/*======================
+    Popup infos
+====================== */
+.popup-body {
+    padding: 15px;
+}
+.popup-body span{
+    font-size: 14px;
+}
+.popup-buttons .button.button-positive {
+    background-color: #5D3FB4;
+}
