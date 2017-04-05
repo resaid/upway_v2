@@ -949,7 +949,7 @@ Page Anciens trajet
 /*==========================
     Profil
 =========================== */
-.profil-page label{
+.profil-page label.input-profil{
     border-radius: 4px;
     background: #fff;
 }
@@ -964,4 +964,34 @@ Page Anciens trajet
 }
 .profil-page .button.button-positive {
     width: 100%;
+}
+.cc-selector-profil input{
+    margin:0;padding:0;
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    appearance:none;
+}
+.condacc,.condsup{background:#f1f1f1;}
+.cc-selector-profil input:active +.drinkcard-cc{opacity: .9;}
+.cc-selector-profil input:checked +.drinkcard-cc{
+    background: #3B4270;
+    color: #fff;
+}
+.drinkcard-cc{
+    cursor:pointer;
+    background-size:contain;
+    background-repeat:no-repeat;
+    display:inline-block;
+    width:100%;height:46px;
+    line-height: 30px;
+    text-align: center;
+    -webkit-transition: all 100ms ease-in;
+    -moz-transition: all 100ms ease-in;
+    transition: all 100ms ease-in;
+    border: none;
+}
+.drinkcard-cc:hover{
+    -webkit-filter: brightness(1.2) grayscale(.5) opacity(.9);
+    -moz-filter: brightness(1.2) grayscale(.5) opacity(.9);
+    filter: brightness(1.2) grayscale(.5) opacity(.9);
 }
