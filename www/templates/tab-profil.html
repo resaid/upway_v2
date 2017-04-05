@@ -1,11 +1,76 @@
-<ion-view view-title="Profil" name="dashboard-view">
+<ion-view view-title="Paramètres du compte">
     <ion-nav-buttons side="left">
         <a href="#/tab/accueil"><button menu-toggle="left" class="button button-icon icon-up"></button></a>
     </ion-nav-buttons>
-    <ion-content class="padding bg-accueil">
-        <div class="page container-90-auto">
-            <p class="center txt-large mtop20">Votre profil</p>
-            <p class="txt-small mtop30">{{ user.user_nom }}<br/>{{ user.user_prenom }}<br/>{{ user.user_email }}</p>
+    <ion-content padding >
+        <div class="page ">
+            <!--<div class="page container-90-auto">-->
+                <!--<p class="center txt-large mtop20">Votre profil</p>-->
+                <!--<p class="txt-small mtop30">{{ user.user_nom }}<br/>{{ user.user_prenom }}<br/>{{ user.user_email }}</p>-->
+            <!--</div>-->
+            <section class="ptop60 pbot70 bg-statistiques">
+                <div class="block-recap-one center ">
+                    <div class="sprite-niveau center mbot10"></div>
+                    <p class="txt-medium">Vous êtes <span id="point-xp"><b>niveau {{ statistiques.user_level }}</b></span></p>
+                    <div class="bar-niveau center mtop10 mbot5">
+                        <div class="niveau"></div>
+                    </div>
+                    <p class="txt-small">{{ statistiques.user_point_xp }}xp / <b>450xp</b></p>
+                </div>
+            </section>
+            <section class="profil-page">
+                <div class="full-width bg-blue-violet ptop60">
+                    <div class="row ">
+                        <div class="col">
+                            <label class="item item-input">
+                            <input type="text" value="{{ user.user_nom }}" ng-disabled="!pNom">
+                        </label>
+                        </div>
+                        <div class="col">
+                            <label class="item item-input">
+                            <input type="text" value="{{ user.user_prenom }}" ng-disabled="!pPrenom">
+                        </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="full-width bg-violet pbot60">
+                    <div class="row responsive-sm">
+                        <div class="col">
+                            <label class="item item-input">
+                                <input type="email" value="{{ user.user_email }}" ng-disabled="!editEmail">
+                                <i class="icon ion-edit placeholder-icon" ng-click="editEmail()"></i>
+                            </label>
+                        </div>
+                        <div class="col">
+                            <label class="item item-input">
+                                <input type="password" value="********" placeholder="************" ng-disabled="!editPassword">
+                                <i class="icon ion-edit placeholder-icon" ng-click="editPassword()"></i>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label class="item item-input">
+                            <input type="text" placeholder="Email">
+                        </label>
+                        </div>
+                        <div class="col">
+                            <label class="item item-input">
+                            <input type="text" placeholder="Email">
+                        </label>
+                        </div>
+                    </div>
+                    <div class="row mtop30">
+                        <div class="col">
+                        </div>
+                        <div class="col col-50">
+                            <button class="button button-positive">Enregistrer</button>
+                        </div>
+                        <div class="col">
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
     </ion-content>
 </ion-view>
