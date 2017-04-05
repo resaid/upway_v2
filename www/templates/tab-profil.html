@@ -22,12 +22,12 @@
                 <div class="full-width bg-blue-violet ptop60">
                     <div class="row ">
                         <div class="col">
-                            <label class="item item-input">
+                            <label class="item item-input input-profil">
                             <input type="text" value="{{ user.user_nom }}" ng-disabled="!pNom">
                         </label>
                         </div>
                         <div class="col">
-                            <label class="item item-input">
+                            <label class="item item-input input-profil">
                             <input type="text" value="{{ user.user_prenom }}" ng-disabled="!pPrenom">
                         </label>
                         </div>
@@ -36,30 +36,29 @@
                 <div class="full-width bg-violet pbot60">
                     <div class="row responsive-sm">
                         <div class="col">
-                            <label class="item item-input">
+                            <label class="item item-input input-profil">
                                 <input type="email" value="{{ user.user_email }}" ng-disabled="!editEmail">
                                 <i class="icon ion-edit placeholder-icon" ng-click="editEmail()"></i>
                             </label>
                         </div>
                         <div class="col">
-                            <label class="item item-input">
+                            <label class="item item-input input-profil">
                                 <input type="password" value="********" placeholder="************" ng-disabled="!editPassword">
                                 <i class="icon ion-edit placeholder-icon" ng-click="editPassword()"></i>
                             </label>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col">
-                            <label class="item item-input">
-                            <input type="text" placeholder="Email">
-                        </label>
+                        <div class="row cc-selector-profil">
+                            <div class="col">
+                                <input checked="checked" id="condacc" type="radio" name="type-conduite" value="conduite accompag" />
+                                <label class="drinkcard-cc condacc item item-input input-profil" for="condacc">conduite accompag.</label>
+                            </div>
+
+                            <div class="col">
+                                <input id="condsup" type="radio" name="type-conduite" value="conduite sup" />
+                                <label class="drinkcard-cc condsup item item-input input-profil" for="condsup">conduite sup.</label>
+                            </div>
                         </div>
-                        <div class="col">
-                            <label class="item item-input">
-                            <input type="text" placeholder="Email">
-                        </label>
-                        </div>
-                    </div>
                     <div class="row mtop30">
                         <div class="col">
                         </div>
