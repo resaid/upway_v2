@@ -794,14 +794,39 @@ hr {
 }
 
 .box-end-trajet-check {
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background: #fff;
+    /*width: 20px;*/
+    /*height: 20px;*/
+    /*border-radius: 50%;*/
+    /*background: #fff;*/
     position: absolute;
     right: 10px;
     bottom: 0;
 }
+.box-end-trajet-check input[type="checkbox"]{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+/*.box-end-trajet-check input[type="checkbox"]:not(:checked) + label:before,*/
+/*.box-end-trajet-check input[type="checkbox"]:checked + label:before {*/
+    /*content: '';*/
+    /*position: absolute;*/
+    /*left: 0; top: 0;*/
+    /*width: 20px; height: 20px;*/
+    /*background: #fff;*/
+    /*border-radius:50%;*/
+/*}*/
+/*.box-end-trajet-check input[type="checkbox"]:not(:checked) + label:after,*/
+/*.box-end-trajet-check input[type="checkbox"]:checked + label:after {*/
+    /*content: '✔';*/
+    /*position: absolute;*/
+    /*top: .1em; left: .3em;*/
+    /*font-size: 1.3em;*/
+    /*line-height: 0.8;*/
+    /*color: #09ad7e;*/
+    /*transition: all .2s;*/
+
+/*}*/
 .box-end-trajet-check > img {
     width: 100%;
 }
@@ -920,4 +945,23 @@ Page Anciens trajet
     font-weight: 500;
     padding:16px 80px;
     color: #fff;
+}
+/*==========================
+    Profil
+=========================== */
+.profil-page label{
+    border-radius: 4px;
+    background: #fff;
+}
+.profil-page input[disabled] {
+    background: transparent;
+}
+.profil-page i{
+    width: 10%;
+    font-size: 20px;
+    padding-left: 8px;
+    border-left: 3px solid #f1f1f1;
+}
+.profil-page .button.button-positive {
+    width: 100%;
 }
