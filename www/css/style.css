@@ -964,6 +964,10 @@ Page Anciens trajet
 }
 .profil-page .button.button-positive {
     width: 100%;
+    background: #3F51B5;
+}
+.profil-page .button.button-light {
+    color: #5D3FB4;
 }
 .cc-selector-profil input{
     margin:0;padding:0;
