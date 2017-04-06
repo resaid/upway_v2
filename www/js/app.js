@@ -77,7 +77,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     views: {
       'tab-login': {
         templateUrl: 'templates/tab-profil.html',
-        controller: 'ProfilCtrl'
+        controller: 'AccueilCtrl'
       }
     }
   })
@@ -113,7 +113,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       }
     }
   })
-  
+
   .state('tab.fiches', {
     url: '/fiches',
     views: {
@@ -123,6 +123,24 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       }
     }
   })
+      .state('tab.fiche_rond-point', {
+          url: '/rond-point',
+          views: {
+              'tab-fiche-rpoint': {
+                  templateUrl: 'templates/tab-fiche-rpoint.html',
+                  controller: 'StaticCtrl'
+              }
+          }
+      })
+      .state('tab.signalisation', {
+          url: '/signalisation',
+          views: {
+              'tab-fiche-signalisation': {
+                  templateUrl: 'templates/tab-fiche-signalisation.html',
+                  controller: 'StaticCtrl'
+              }
+          }
+      })
   
   /* TRAJET */
   
