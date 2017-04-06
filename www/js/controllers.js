@@ -23,7 +23,7 @@ angular.module('starter.controllers', ['ionic','ngCordova'])
                         {
                         title:'Correct !'
                         });
-                    $state.go('tab.accueil');
+                    $state.go('tab.login');
                     }
                 else
                     {
@@ -90,37 +90,93 @@ angular.module('starter.controllers', ['ionic','ngCordova'])
 
 .controller('AccueilCtrl', function($scope, $state, $http, $ionicPopup, $ionicHistory)
     {
-    $(document).ready(function()
-        {
-        $scope.user = JSON.parse(sessionStorage.getItem('user'));
-        $http({
-            method: "post",
-            url: "http://upway-app.fr/app/dataload.php",
-            headers: {'Content-Type': 'application/x-www-form-urlencoded'},
-            data: $.param(
-                {
-                id_user: $scope.user.user_id
-                })
-            }).success(function(result)
-                {
-                if (result.status == "logged")
+        $(document).ready(function()
+            {
+            $scope.user = JSON.parse(sessionStorage.getItem('user'));
+            $http({
+                method: "post",
+                url: "http://upway-app.fr/app/dataload.php",
+                headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+                data: $.param(
                     {
-                    $scope.statistiques = result;
-                    sessionStorage.setItem('user_statistiques', JSON.stringify(result));
-                    $('.niveau').css('width', ($scope.statistiques.user_point_xp * 100 / 450) + '%');
+                    id_user: $scope.user.user_id
+                    })
+                }).success(function(result)
+                    {
+                    if (result.status == "logged")
+                        {
+                        $scope.statistiques = result;
+                        sessionStorage.setItem('user_statistiques', JSON.stringify(result));
+                        $('.niveau').css('width', ($scope.statistiques.user_point_xp * 100 / 450) + '%');
+                        }
+                    })
+                .error(function(error)
+                    {
+                    alert("erreur = " + error);
                     }
-                })
-            .error(function(error)
+                );
+            });
+
+
+        //////////////////////////// Page profil ////////////////////////////////////////
+
+        //$scope.user = JSON.parse(sessionStorage.getItem('user'));
+        $scope.inactive= true;
+        $scope.editEmail= true;
+        $scope.updatep = function(dataup)
+        {
+            $http({
+                method: "post",
+                url: "http://upway-app.fr/app/updateProfil.php",
+                headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+                data: $.param(
+                    {
+                        id_user: $scope.user.user_id,
+
+                        usermail: dataup.mail,
+                        userpassword: dataup.password
+                    })
+            }).success(function(result)
+            {
+                if (result.reponse == "oui")
                 {
-                alert("erreur = " + error);
+                    $ionicPopup.alert(
+                        {
+                            title:'Modification !',
+                            template:'Votre adresse mail et le mot de passe ont été mise à jour'
+                        });
+                    $state.go('tab.accueil');
                 }
-            );
-        });
+                else
+                {
+                    $ionicPopup.alert(
+                        {
+                            title:'Nouveau Email & mot de passe',
+                            template:'Veuillez remplir l\'adresse mail et le mot de passe'
+                        });
+                }
+            })
+                .error(function(data)
+                    {
+                        $ionicPopup.alert(
+                            {
+                                title:'Accès réseau',
+                                template:'Problème d\'accès réseau !'
+                            });
+                    }
+                );
+        };
+        $scope.logout = function() {
+            $state.go('tab.login');
+            $scope.$on('$ionicView.enter', function(event, viewData) {
+                $ionicHistory.clearCache();
+            });
+        }
     })
 
 .controller('FintrajetCtrl', function($scope, $state, $http, $ionicPopup, $ionicHistory)
     {
-    
+
     })
 
 .controller('TrajetcurrentCtrl', function($scope, $state, $http, $ionicPopup, $ionicPlatform, $cordovaGeolocation, $ionicHistory)
@@ -325,11 +381,15 @@ angular.module('starter.controllers', ['ionic','ngCordova'])
         });
     })
 
-.controller('ProfilCtrl', function($scope, $ionicHistory)
+// .controller('ProfilCtrl', function($scope,$ionicPopup,$state, $ionicHistory, $http)
+//     {
+//
+//
+//     })
+//
+.controller('StaticCtrl', function($scope, $state, $http, $ionicPopup, $ionicHistory)
     {
-    $scope.user = JSON.parse(sessionStorage.getItem('user'));
-    })
-
-.controller('StaticCtrl', function($scope)
-    {
-    })
+        $scope.GoBack = function () {
+            $ionicHistory.goBack();
+        }
+    });
