@@ -175,6 +175,7 @@ p {
 
 .icon-up::before {
     content: url("../img/icon/up-blanc.svg");
+    vertical-align: middle !important;
 }
 .icon-campagne::before {
     content: url("../img/icon/campagne-blanc.svg");
@@ -888,7 +889,9 @@ hr {
     vertical-align: top;
     overflow: hidden;
 }
-
+.block-item-fiche img{
+    width: 100%;
+}
 /*==================================
 Page récapitulatif
  ==================================*/
@@ -945,6 +948,18 @@ Page Anciens trajet
     font-weight: 500;
     padding:16px 80px;
     color: #fff;
+}
+.item-fiche:hover{
+    color: #fff;
+    background: transparent;
+    border: none;
+}
+button.button.ion-chevron-left.item-fiche {
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 20px;
+    vertical-align: middle;
 }
 /*==========================
     Profil
